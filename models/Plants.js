@@ -7,7 +7,7 @@ const PlantSchema = new Schema({
     type: String,
     required: true
   },
-  locations: {
+  location: {
     type: Array,
     required: true
   },
