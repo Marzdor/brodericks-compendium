@@ -51,11 +51,15 @@ const PlantsBody = props => {
   console.log(dataToShow);
   for (let plant in dataToShow) {
     const info = dataToShow[plant];
+    const location = [];
+    info.location.forEach(el => {
+      location.push(<p key={el}>{el}</p>);
+    });
     plantEle.push(
       <section key={info.name}>
         <h2>{info.name}</h2>
         <h3>{info.rarity}</h3>
-        <h3>{info.location}</h3>
+        <div>{location}</div>
         <p>{info.description}</p>
       </section>
     );
