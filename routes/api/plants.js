@@ -8,7 +8,9 @@ const Plant = require("../../models/Plants");
 // @desc  get all plants
 // @access Public
 router.get("/", (req, res) => {
-  Plant.find().then(plants => res.json(plants));
+  Plant.find()
+    .sort({ name: 1 })
+    .then(plants => res.json(plants));
 });
 
 // @route POST api/plants
