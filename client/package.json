@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "history": "^4.7.2",
+    "normalize.css": "^8.0.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
@@ -13,7 +14,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postcss": "postcss --config postcss.config.js -w src/css/main.css -o src/css/index.css"
   },
   "proxy": "http://localhost:5000",
   "eslintConfig": {
@@ -24,5 +26,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "autoprefixer": "^9.4.2",
+    "postcss-cli": "^6.0.1",
+    "postcss-import": "^12.0.1",
+    "postcss-mixins": "^6.2.0",
+    "postcss-nested": "^4.1.0",
+    "postcss-simple-vars": "^5.0.1"
+  }
 }
