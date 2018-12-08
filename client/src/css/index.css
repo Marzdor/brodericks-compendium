@@ -390,19 +390,36 @@ a {
     display: grid;
     grid-template-columns: repeat(2, 1fr)
 }
-    .filter-category {
+  }
+
+@media (min-width: 1024px) {
+
+.filter {
+    display: flex;
+    flex-direction: column
+}
+  }
+
+@media (min-width: 320px) {
+
+.filter-category {
       display: flex;
       flex-direction: column;
       width: 90%;
-      margin: 0 auto;
-    }
-    .filter-title {
+      margin: 0 auto
+  }
+  }
+
+@media (min-width: 320px) {
+
+.filter-title {
       text-align: center;
-      margin: 10px;
-    }
-    .filter--hide {
-      display: none;
-    }
+      margin: 10px
+  }
+  }
+
+.filter--hide {
+    display: none;
   }
 
 @media (min-width: 320px) {
@@ -420,6 +437,10 @@ a {
       .plant-title-sub {
         margin: 15px;
       }
+      .plant-title--loc {
+        grid-column: 2;
+        grid-row: 2;
+      }
     .plant-name {
       grid-column: span 2;
       justify-self: center;
@@ -431,5 +452,26 @@ a {
       width: 90%;
       margin: 0 auto;
       line-height: 1.25;
+    }
+  }
+
+@media (min-width: 320px) {
+
+.container {
+    display: flex;
+    flex-direction: column
+}
+  }
+
+@media (min-width: 1024px) {
+
+.container {
+    display: grid;
+    grid-template-columns: 15vw auto
+}
+
+    .container-plant {
+      height: 95vh;
+      overflow: scroll;
     }
   }

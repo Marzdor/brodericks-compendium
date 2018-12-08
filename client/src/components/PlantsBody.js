@@ -63,14 +63,14 @@ const PlantsBody = props => {
         <h2 className="plant-name">{info.name}</h2>
         <h3 className="plant-title">Rarity</h3>
         <p className="plant-title-sub">{info.rarity}</p>
-        <h3 className="plant-title">Locations</h3>
+        <h3 className="plant-title plant-title--loc">Locations</h3>
         <div className="plant-loc">{location}</div>
         <p className="plant-des">{info.description}</p>
       </section>
     );
   }
   //
-  return <div>{plantEle}</div>;
+  return <div className="container-plant">{plantEle}</div>;
 };
 
 export default PlantsBody;

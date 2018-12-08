@@ -1,0 +1,15 @@
+.container {
+  @mixin atSmall {
+    display: flex;
+    flex-direction: column;
+  }
+  @mixin atLarge {
+    display: grid;
+    grid-template-columns: 15vw auto;
+
+    &-plant {
+      height: 95vh;
+      overflow: scroll;
+    }
+  }
+}
