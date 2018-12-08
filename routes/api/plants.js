@@ -4,52 +4,11 @@ const router = express.Router();
 // Plant Model
 const Plant = require("../../models/Plants");
 
-const locations = {
-  a: "Arctic",
-  ci: "Cities",
-  co: "Coastal",
-  d: "Deserts",
-  f: "Forests",
-  j: "Jungles",
-  m: "Mountains",
-  o: "Oceans",
-  p: "Plains",
-  r: "Rivers",
-  s: "Swamps",
-  uc: "Underdark/Caves"
-};
-const raritys = {
-  vc: "Very Common",
-  c: "Common",
-  uc: "Uncommon",
-  r: "Rare",
-  vr: "Very Rare",
-  l: "Legendary"
-};
-
 // @route GET api/plants
 // @desc  get all plants
 // @access Public
 router.get("/", (req, res) => {
   Plant.find().then(plants => res.json(plants));
-});
-
-// @route GET api/plants
-// @desc  get based on rarity
-// @access Public
-router.get("/rarity=:rarity", (req, res) => {
-  Plant.find({ rarity: raritys[req.params.rarity] }).then(plants =>
-    res.json(plants)
-  );
-});
-
-// @route GET api/plants
-// @desc  get based on location
-// @access Public
-router.get("/location=:loc", (req, res) => {
-  Plant.find({ location: { $all: [locations[req.params.loc]] } }).then(plants =>
-    res.json(plants)
-  );
 });
 
 // @route POST api/plants
