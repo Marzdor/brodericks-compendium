@@ -12,15 +12,15 @@ const Filter = props => {
       m: "Mountains",
       o: "Oceans",
       p: "Plains",
-      r: "Rivers",
+      i: "Rivers",
       s: "Swamps",
-      uc: "Underdark/Caves"
+      ud: "Underdark/Caves"
     },
     rarity: {
       vc: "Very Common",
       c: "Common",
       uc: "Uncommon",
-      r: "Rare",
+      ra: "Rare",
       vr: "Very Rare",
       l: "Legendary"
     }
@@ -32,16 +32,26 @@ const Filter = props => {
   for (let key in filters.locations) {
     locList.push(
       <div key={key + " : " + filters.locations[key]}>
-        <input type="checkbox" id={key + "Filter"} name={key + "Filter"} />
-        <label htmlFor={key + "Filter"}>{filters.locations[key]}</label>
+        <input
+          onClick={props.filterClick}
+          type="checkbox"
+          id={key}
+          name={key}
+        />
+        <label htmlFor={key}>{filters.locations[key]}</label>
       </div>
     );
   }
   for (let key in filters.rarity) {
     rList.push(
       <div key={key + " : " + filters.rarity[key]}>
-        <input type="checkbox" id={key + "Rarity"} name={key + "Rarity"} />
-        <label htmlFor={key + "Rarity"}>{filters.rarity[key]}</label>
+        <input
+          onClick={props.filterClick}
+          type="checkbox"
+          id={key}
+          name={key}
+        />
+        <label htmlFor={key}>{filters.rarity[key]}</label>
       </div>
     );
   }
