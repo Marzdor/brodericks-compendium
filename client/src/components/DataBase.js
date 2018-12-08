@@ -8,24 +8,24 @@ class DataBase extends Component {
     this.state = {
       data: [],
       filters: {
-        a: false,
-        ci: false,
-        co: false,
-        d: false,
-        f: false,
-        j: false,
-        m: false,
-        o: false,
-        p: false,
-        ri: false,
-        s: false,
-        ud: false,
-        vc: false,
-        c: false,
-        uc: false,
-        ra: false,
-        vr: false,
-        l: false
+        lar: [false, "Arctic"],
+        lci: [false, "Cities"],
+        lco: [false, "Coastal"],
+        lde: [false, "Deserts"],
+        lfo: [false, "Forests"],
+        lju: [false, "Jungles"],
+        lmo: [false, "Mountains"],
+        loc: [false, "Oceans"],
+        lpl: [false, "Plains"],
+        lri: [false, "Rivers"],
+        lsw: [false, "Swamps"],
+        lud: [false, "Underdark/Caves"],
+        rvc: [false, "Very Common"],
+        rco: [false, "Common"],
+        ruc: [false, "Uncommon"],
+        rra: [false, "Rare"],
+        rvr: [false, "Very Rare"],
+        rle: [false, "Legendary"]
       },
       isLoading: true
     };
@@ -44,8 +44,8 @@ class DataBase extends Component {
 
   filterClick(e) {
     const filters = { ...this.state.filters };
-    console.log(filters);
-    filters[e.target.id] = !this.state.filters[e.target.id];
+
+    filters[e.target.id][0] = !this.state.filters[e.target.id][0];
     this.setState({ filters });
   }
 
