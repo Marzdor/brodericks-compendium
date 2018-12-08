@@ -2,3 +2,6 @@
 @import "base/_mixins.css";
 @import "base/_global.pcss";
 @import "base/_variables.pcss";
+@import "modules/_nav.pcss";
+@import "modules/_filter.pcss";
+@import "modules/_plant.pcss";

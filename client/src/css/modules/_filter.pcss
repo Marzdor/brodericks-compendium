@@ -1,0 +1,19 @@
+.filter {
+  @mixin atSmall {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    &-category {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+    }
+    &-title {
+      text-align: center;
+      margin: 10px;
+    }
+    &--hide {
+      display: none;
+    }
+  }
+}
