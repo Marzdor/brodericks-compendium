@@ -4,23 +4,33 @@
     grid-template-columns: repeat(2, 1fr);
     margin: 50px auto auto auto;
     text-align: center;
+  }
 
-    &-title {
+  &-title {
+    @mixin atSmall {
       margin: 15px;
-      &-sub {
+    }
+    &-sub {
+      @mixin atSmall {
         margin: 15px;
       }
-      &--loc {
+    }
+    &--loc {
+      @mixin atSmall {
         grid-column: 2;
         grid-row: 2;
       }
     }
-    &-name {
+  }
+  &-name {
+    @mixin atSmall {
       grid-column: span 2;
       justify-self: center;
       margin: 0;
     }
-    &-des {
+  }
+  &-des {
+    @mixin atSmall {
       grid-column: span 2;
       text-align: justify;
       width: 90%;

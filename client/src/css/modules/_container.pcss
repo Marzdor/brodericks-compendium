@@ -6,8 +6,9 @@
   @mixin atLarge {
     display: grid;
     grid-template-columns: 15vw auto;
-
-    &-plant {
+  }
+  &-plant {
+    @mixin atLarge {
       height: 95vh;
       overflow: scroll;
     }
