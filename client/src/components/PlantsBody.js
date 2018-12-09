@@ -47,25 +47,30 @@ const PlantsBody = props => {
   //
   // creating elements
   const plantEle = [];
-  console.log(props.filters);
-  console.log(dataToShow);
+
   for (let plant in dataToShow) {
     const info = dataToShow[plant];
     const location = [];
     info.location.forEach(el => {
-      location.push(<p key={el}>{el}</p>);
+      location.push(
+        <p className="plant-title-sub" key={el}>
+          {el}
+        </p>
+      );
     });
     plantEle.push(
-      <section key={info.name}>
-        <h2>{info.name}</h2>
-        <h3>{info.rarity}</h3>
-        <div>{location}</div>
-        <p>{info.description}</p>
+      <section className="plant" key={info.name}>
+        <h2 className="plant-name">{info.name}</h2>
+        <h3 className="plant-title">Rarity</h3>
+        <p className="plant-title-sub">{info.rarity}</p>
+        <h3 className="plant-title plant-title--loc">Locations</h3>
+        <div className="plant-loc">{location}</div>
+        <p className="plant-des">{info.description}</p>
       </section>
     );
   }
   //
-  return <div>{plantEle}</div>;
+  return <div className="container-plant">{plantEle}</div>;
 };
 
 export default PlantsBody;
