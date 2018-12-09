@@ -4,22 +4,34 @@
     grid-template-columns: repeat(2, 1fr);
   }
   @mixin atLarge {
+    background-color: #a7a2a9;
+    padding: 50px 0 0 0;
     display: flex;
     flex-direction: column;
   }
   &-category {
     @mixin atSmall {
+      background-color: #a7adc6;
+      border: 1px solid #08090a;
       display: flex;
       flex-direction: column;
-      width: 90%;
-      margin: 0 auto;
+      margin: 0;
     }
   }
   &-title {
     @mixin atSmall {
+      background-color: #525b76;
+      color: #f7ede2;
       text-align: center;
-      margin: 10px;
+      padding: 5px;
+      margin: 0;
     }
+  }
+  &-check {
+    padding: 0 0 0 5px;
+  }
+  &-label {
+    padding: 0 0 0 5px;
   }
   &--hide {
     display: none;

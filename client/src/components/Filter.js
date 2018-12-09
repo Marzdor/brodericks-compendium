@@ -45,7 +45,9 @@ const Filter = props => {
             id={key}
             name={key}
           />
-          <label htmlFor={key}>{filters[key]}</label>
+          <label className="filter-label" htmlFor={key}>
+            {filters[key]}
+          </label>
         </div>
       );
     } else {
@@ -60,7 +62,9 @@ const Filter = props => {
             id={key}
             name={key}
           />
-          <label htmlFor={key}>{filters[key]}</label>
+          <label className="filter-label" htmlFor={key}>
+            {filters[key]}
+          </label>
         </div>
       );
     }

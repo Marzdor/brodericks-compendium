@@ -2,17 +2,25 @@
   @mixin atSmall {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 50px auto auto auto;
     text-align: center;
+  }
+  @mixin atLarge {
+    margin: 50px 20px auto 20px;
+    border: 1px solid #08090a;
+    border-radius: 15px;
   }
 
   &-title {
     @mixin atSmall {
-      margin: 15px;
+      background-color: #a7adc6;
+      padding: 5px;
+      margin: 0;
     }
     &-sub {
       @mixin atSmall {
-        margin: 15px;
+        background-color: #a7adc6;
+        padding: 5px;
+        margin: 0;
       }
     }
     &--loc {
@@ -24,18 +32,26 @@
   }
   &-name {
     @mixin atSmall {
+      background-color: #525b76;
+      color: #f7ede2;
       grid-column: span 2;
-      justify-self: center;
+      padding: 7.5px;
       margin: 0;
+    }
+    @mixin atLarge {
+      border-radius: 15px 15px 0 0;
     }
   }
   &-des {
     @mixin atSmall {
+      background-color: #a7adc6;
       grid-column: span 2;
       text-align: justify;
-      width: 90%;
-      margin: 0 auto;
+      padding: 5px 10%;
       line-height: 1.25;
+    }
+    @mixin atLarge {
+      border-radius: 0 0 15px 15px;
     }
   }
 }

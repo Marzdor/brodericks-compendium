@@ -376,12 +376,18 @@ a {
 .nav {
     display: flex
 }
-    .nav-link {
+  }
+
+@media (min-width: 320px) {
+
+.nav-link {
+      background-color: #525b76;
+      color: #f7ede2;
       flex-grow: 1;
       padding: 10px;
       border: 1px solid black;
-      text-align: center;
-    }
+      text-align: center
+  }
   }
 
 @media (min-width: 320px) {
@@ -395,6 +401,8 @@ a {
 @media (min-width: 1024px) {
 
 .filter {
+    background-color: #a7a2a9;
+    padding: 50px 0 0 0;
     display: flex;
     flex-direction: column
 }
@@ -403,19 +411,31 @@ a {
 @media (min-width: 320px) {
 
 .filter-category {
+      background-color: #a7adc6;
+      border: 1px solid #08090a;
       display: flex;
       flex-direction: column;
-      width: 90%;
-      margin: 0 auto
+      margin: 0
   }
   }
 
 @media (min-width: 320px) {
 
 .filter-title {
+      background-color: #525b76;
+      color: #f7ede2;
       text-align: center;
-      margin: 10px
+      padding: 5px;
+      margin: 0
   }
+  }
+
+.filter-check {
+    padding: 0 0 0 5px;
+  }
+
+.filter-label {
+    padding: 0 0 0 5px;
   }
 
 .filter--hide {
@@ -427,32 +447,79 @@ a {
 .plant {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 50px auto auto auto;
     text-align: center
 }
+  }
 
-    .plant-title {
-      margin: 15px;
+@media (min-width: 1024px) {
+
+.plant {
+    margin: 50px 20px auto 20px;
+    border: 1px solid #08090a;
+    border-radius: 15px
+}
+  }
+
+@media (min-width: 320px) {
+
+.plant-title {
+      background-color: #a7adc6;
+      padding: 5px;
+      margin: 0
+  }
+  }
+
+@media (min-width: 320px) {
+
+.plant-title-sub {
+        background-color: #a7adc6;
+        padding: 5px;
+        margin: 0
     }
-      .plant-title-sub {
-        margin: 15px;
-      }
-      .plant-title--loc {
+  }
+
+@media (min-width: 320px) {
+
+.plant-title--loc {
         grid-column: 2;
-        grid-row: 2;
-      }
-    .plant-name {
-      grid-column: span 2;
-      justify-self: center;
-      margin: 0;
+        grid-row: 2
     }
-    .plant-des {
+  }
+
+@media (min-width: 320px) {
+
+.plant-name {
+      background-color: #525b76;
+      color: #f7ede2;
+      grid-column: span 2;
+      padding: 7.5px;
+      margin: 0
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.plant-name {
+      border-radius: 15px 15px 0 0
+  }
+  }
+
+@media (min-width: 320px) {
+
+.plant-des {
+      background-color: #a7adc6;
       grid-column: span 2;
       text-align: justify;
-      width: 90%;
-      margin: 0 auto;
-      line-height: 1.25;
-    }
+      padding: 5px 10%;
+      line-height: 1.25
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.plant-des {
+      border-radius: 0 0 15px 15px
+  }
   }
 
 @media (min-width: 320px) {
@@ -469,9 +536,13 @@ a {
     display: grid;
     grid-template-columns: 15vw auto
 }
+  }
 
-    .container-plant {
+@media (min-width: 1024px) {
+
+.container-plant {
+      background-color: #a7a2a9;
       height: 95vh;
-      overflow: scroll;
-    }
+      overflow: scroll
+  }
   }
