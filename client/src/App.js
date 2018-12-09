@@ -7,6 +7,7 @@ import DataBase from "./components/DataBase";
 import Scavenging from "./components/Scavenging";
 import Error from "./components/Error";
 import Nav from "./components/Nav";
+import Edit from "./components/Edit";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/plants&fungi" component={DataBase} />
             <Route path="/scavenging" component={Scavenging} />
+            <Route path="/edit" component={Edit} />
             <Route component={Error} />
           </Switch>
         </div>
