@@ -1,4 +1,6 @@
 import React from "react";
+import ReactDOM from "react-dom";
+import ReactMarkdown from "react-markdown";
 
 const PlantsBody = props => {
   // Check if any filters are active
@@ -51,6 +53,7 @@ const PlantsBody = props => {
   for (let plant in dataToShow) {
     const info = dataToShow[plant];
     const location = [];
+
     info.location.forEach(el => {
       location.push(
         <p className="plant-title-sub" key={el}>
@@ -65,7 +68,9 @@ const PlantsBody = props => {
         <p className="plant-title-sub">{info.rarity}</p>
         <h3 className="plant-title plant-title--loc">Locations</h3>
         <div className="plant-loc">{location}</div>
-        <p className="plant-des">{info.description}</p>
+        <div className="plant-des">
+          <ReactMarkdown source={info.description} />
+        </div>
       </section>
     );
   }
