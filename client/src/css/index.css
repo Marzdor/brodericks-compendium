@@ -430,6 +430,17 @@ a {
   }
   }
 
+@media (min-width: 1024px) {
+
+.filter-category {
+      border: 1.5px solid #08090a;
+      border-radius: 15px 15px 15px 15px;
+      margin: -35px auto 10px auto;
+      padding: 35px 0 5px 0;
+      width: 85%
+  }
+  }
+
 @media (min-width: 320px) {
 
 .filter-title {
@@ -441,12 +452,22 @@ a {
   }
   }
 
+@media (min-width: 1024px) {
+
+.filter-title {
+      border: 2.5px solid #08090a;
+      border-radius: 15px 15px 15px 15px;
+      margin-bottom: 5px;
+      z-index: 0
+  }
+  }
+
 .filter-check {
-    padding: 0 0 0 5px;
+    padding: 1.5px 1.5px 1.5px 15px;
   }
 
 .filter-label {
-    padding: 0 0 0 5px;
+    padding: 1.5px 1.5px 1.5px 5px;
   }
 
 .filter--hide {
@@ -465,9 +486,7 @@ a {
 @media (min-width: 1024px) {
 
 .plant {
-    margin: 50px 20px auto 20px;
-    border: 1px solid #08090a;
-    border-radius: 15px
+    margin: 50px 20px auto 20px
 }
   }
 
@@ -489,11 +508,26 @@ a {
     }
   }
 
+@media (min-width: 1024px) {
+
+.plant-title-sub--loc {
+          display: grid;
+          grid-template-columns: 1fr 1fr
+      }
+  }
+
 @media (min-width: 320px) {
 
 .plant-title--loc {
         grid-column: 2;
         grid-row: 2
+    }
+  }
+
+@media (min-width: 1024px) {
+
+.plant-title--rar {
+        border-left: 1px solid #08090a
     }
   }
 
@@ -511,7 +545,8 @@ a {
 @media (min-width: 1024px) {
 
 .plant-name {
-      border-radius: 15px 15px 0 0
+      border: 2.5px solid #08090a;
+      border-radius: 15px 15px 15px 15px
   }
   }
 
@@ -529,7 +564,30 @@ a {
 @media (min-width: 1024px) {
 
 .plant-des {
-      border-radius: 0 0 15px 15px
+      border-bottom: 1.5px solid #08090a;
+      border-left: 1.5px solid #08090a;
+      border-right: 1.5px solid #08090a;
+      border-radius: 0 0 15px 15px;
+      width: 92%;
+      margin: 0 auto
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.plant--Left {
+      border-left: 1.5px solid #08090a;
+      width: 92%;
+      margin: 0 0 0 auto
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.plant--Right {
+      border-right: 1.5px solid #08090a;
+      width: 92%;
+      margin: 0 auto 0 0
   }
   }
 

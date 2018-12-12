@@ -73,16 +73,16 @@ const Filter = props => {
 
   return (
     <div className="filter">
+      <h4 id="loc" onClick={toggle} className="filter-title">
+        Location
+      </h4>
       <section className="filter-category">
-        <h4 id="loc" onClick={toggle} className="filter-title">
-          Location
-        </h4>
         <div className="filter-content">{locList}</div>
       </section>
+      <h4 id="rar" onClick={toggle} className="filter-title">
+        Rarity
+      </h4>
       <section className="filter-category">
-        <h4 id="rar" onClick={toggle} className="filter-title">
-          Rarity
-        </h4>
         <div className="filter-content">{rList}</div>
       </section>
     </div>

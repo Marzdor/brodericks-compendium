@@ -63,10 +63,12 @@ const PlantsBody = props => {
     plantEle.push(
       <section className="plant" key={info.name}>
         <h2 className="plant-name">{info.name}</h2>
-        <h3 className="plant-title">Rarity</h3>
-        <p className="plant-title-sub">{info.rarity}</p>
-        <h3 className="plant-title plant-title--loc">Locations</h3>
-        <div className="plant-loc">{location}</div>
+        <h3 className="plant-title plant--Left">Rarity</h3>
+        <p className="plant-title-sub plant--Left">{info.rarity}</p>
+        <h3 className="plant-title plant-title--loc plant--Right">Locations</h3>
+        <div className="plant-title-sub plant-title-sub--loc plant--Right">
+          {location}
+        </div>
         <div className="plant-des">
           <ReactMarkdown source={info.description} />
         </div>
