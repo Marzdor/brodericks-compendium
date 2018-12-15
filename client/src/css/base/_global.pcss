@@ -8,12 +8,15 @@ body {
   font-family: sans-serif;
   font-family: "Open Sans", sans-serif;
   color: #08090a;
-  background-color: #a7a2a9;
+  background-color: $mainBackroundColor;
   @mixin atLarge {
     width: 80%;
     margin: 0 auto;
     overflow-y: hidden;
   }
+}
+p {
+  font-size: 1.125rem;
 }
 input:focus,
 select:focus,
@@ -23,5 +26,5 @@ button:focus {
 }
 a {
   text-decoration: none;
-  color: black;
+  color: $borderColor;
 }

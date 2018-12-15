@@ -26,7 +26,7 @@ const Filter = props => {
 
   // dropdown toggle
   function toggle(e) {
-    document.querySelectorAll("." + e.target.id).forEach(el => {
+    document.querySelectorAll(".filter--" + e.target.id).forEach(el => {
       el.classList.toggle("filter--hide");
     });
   }
@@ -36,7 +36,7 @@ const Filter = props => {
     if (key[0] === "l") {
       locList.push(
         <div
-          className="filter-check filter--hide loc"
+          className="filter-check filter--hide filter--loc"
           key={key + " : " + filters[key]}
         >
           <input
@@ -53,7 +53,7 @@ const Filter = props => {
     } else {
       rList.push(
         <div
-          className="filter-check filter--hide rar"
+          className="filter-check filter--hide filter--rar"
           key={key + " : " + filters[key]}
         >
           <input
@@ -76,13 +76,13 @@ const Filter = props => {
       <h4 id="loc" onClick={toggle} className="filter-title">
         Location
       </h4>
-      <section className="filter-category">
+      <section className="filter-category filter--hide filter--loc">
         <div className="filter-content">{locList}</div>
       </section>
       <h4 id="rar" onClick={toggle} className="filter-title">
         Rarity
       </h4>
-      <section className="filter-category">
+      <section className="filter-category filter--hide filter--rar">
         <div className="filter-content">{rList}</div>
       </section>
     </div>

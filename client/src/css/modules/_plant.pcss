@@ -10,14 +10,14 @@
 
   &-title {
     @mixin atSmall {
-      background-color: #a7adc6;
+      background-color: $subBackgroundColor;
       padding: 5px;
       margin: 0;
     }
 
     &-sub {
       @mixin atSmall {
-        background-color: #a7adc6;
+        background-color: $subBackgroundColor;
         padding: 5px;
         margin: 0;
       }
@@ -43,8 +43,8 @@
   }
   &-name {
     @mixin atSmall {
-      background-color: #525b76;
-      color: #f7ede2;
+      background-color: $titleBackgroundColor;
+      color: $titleFontColor;
       grid-column: span 2;
       padding: 7.5px;
       margin: 0;
@@ -56,7 +56,7 @@
   }
   &-des {
     @mixin atSmall {
-      background-color: #a7adc6;
+      background-color: $subBackgroundColor;
       grid-column: span 2;
       text-align: justify;
       padding: 5px 10%;

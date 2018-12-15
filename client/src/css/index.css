@@ -370,6 +370,10 @@ body {
 }
   }
 
+p {
+  font-size: 1.125rem;
+}
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -379,7 +383,7 @@ button:focus {
 
 a {
   text-decoration: none;
-  color: black;
+  color: #08090a;
 }
 
 @media (min-width: 320px) {
@@ -396,7 +400,7 @@ a {
       color: #f7ede2;
       flex-grow: 1;
       padding: 10px;
-      border: 1px solid black;
+      border: 1px solid #08090a;
       text-align: center
   }
   }
@@ -462,12 +466,34 @@ a {
   }
   }
 
-.filter-check {
-    padding: 1.5px 1.5px 1.5px 15px;
+@media (min-width: 320px) {
+
+.filter--loc {
+      grid-column: 1;
+      grid-row: 2
+  }
   }
 
+@media (min-width: 320px) {
+
+.filter--rar {
+      grid-column: 2;
+      grid-row: 2
+  }
+  }
+
+@media (min-width: 320px) {
+
+.filter-check {
+      padding: 1.5px 1.5px 1.5px 15px
+  }
+  }
+
+@media (min-width: 320px) {
+
 .filter-label {
-    padding: 1.5px 1.5px 1.5px 5px;
+      padding: 1.5px 1.5px 1.5px 5px
+  }
   }
 
 .filter--hide {

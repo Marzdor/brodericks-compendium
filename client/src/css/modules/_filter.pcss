@@ -4,21 +4,21 @@
     grid-template-columns: repeat(2, 1fr);
   }
   @mixin atLarge {
-    background-color: #a7a2a9;
+    background-color: $mainBackroundColor;
     padding: 50px 0 0 0;
     display: flex;
     flex-direction: column;
   }
   &-category {
     @mixin atSmall {
-      background-color: #a7adc6;
-      border: 1px solid #08090a;
+      background-color: $subBackgroundColor;
+      border: 1px solid $borderColor;
       display: flex;
       flex-direction: column;
       margin: 0;
     }
     @mixin atLarge {
-      border: 1.5px solid #08090a;
+      border: 1.5px solid $borderColor;
       border-radius: 15px 15px 15px 15px;
       margin: -35px auto 10px auto;
       padding: 35px 0 5px 0;
@@ -27,24 +27,40 @@
   }
   &-title {
     @mixin atSmall {
-      background-color: #525b76;
-      color: #f7ede2;
+      background-color: $titleBackgroundColor;
+      color: $titleFontColor;
       text-align: center;
       padding: 5px;
       margin: 0;
     }
     @mixin atLarge {
-      border: 2.5px solid #08090a;
+      border: 2.5px solid $borderColor;
       border-radius: 15px 15px 15px 15px;
       margin-bottom: 5px;
       z-index: 0;
     }
   }
+  &--loc {
+    @mixin atSmall {
+      grid-column: 1;
+      grid-row: 2;
+    }
+  }
+  &--rar {
+    @mixin atSmall {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
   &-check {
-    padding: 1.5px 1.5px 1.5px 15px;
+    @mixin atSmall {
+      padding: 1.5px 1.5px 1.5px 15px;
+    }
   }
   &-label {
-    padding: 1.5px 1.5px 1.5px 5px;
+    @mixin atSmall {
+      padding: 1.5px 1.5px 1.5px 5px;
+    }
   }
   &--hide {
     display: none;
