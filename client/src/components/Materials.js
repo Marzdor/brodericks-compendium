@@ -16,9 +16,9 @@ const Materials = props => {
   });
   //
   return (
-    <section className="container-material">
+    <section>
       <h2 className="materials-title">Included Source Materials</h2>
-      {materialEle}
+      <div className="container-material">{materialEle}</div>
     </section>
   );
 };
