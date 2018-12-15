@@ -1,11 +1,22 @@
 import React, { Component } from "react";
+import Materials from "./Materials";
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: {}
+      data: {},
+      isLoading: true
     };
+  }
+  componentDidMount() {
+    fetch("/api/materials")
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        this.setState({ data: data, isLoading: false });
+      });
   }
 
   render() {
@@ -24,7 +35,7 @@ class Home extends Component {
           </p>
           <p>* I have a count of 639. Not sure which one I am missing.</p>
         </section>
-        <section />
+        {!this.state.isLoading && <Materials data={this.state.data} />}
       </div>
     );
   }
