@@ -37,7 +37,7 @@
     }
     &--rar {
       @mixin atLarge {
-        border-left: 1px solid #08090a;
+        border-left: 1px solid $borderColor;
       }
     }
   }
@@ -50,7 +50,7 @@
       margin: 0;
     }
     @mixin atLarge {
-      border: 2.5px solid #08090a;
+      border: 2.5px solid $borderColor;
       border-radius: 15px 15px 15px 15px;
     }
   }
@@ -63,9 +63,9 @@
       line-height: 1.25;
     }
     @mixin atLarge {
-      border-bottom: 1.5px solid #08090a;
-      border-left: 1.5px solid #08090a;
-      border-right: 1.5px solid #08090a;
+      border-bottom: 1.5px solid $borderColor;
+      border-left: 1.5px solid $borderColor;
+      border-right: 1.5px solid $borderColor;
       border-radius: 0 0 15px 15px;
       width: 92%;
       margin: 0 auto;
@@ -73,14 +73,14 @@
   }
   &--Left {
     @mixin atLarge {
-      border-left: 1.5px solid #08090a;
+      border-left: 1.5px solid $borderColor;
       width: 92%;
       margin: 0 0 0 auto;
     }
   }
   &--Right {
     @mixin atLarge {
-      border-right: 1.5px solid #08090a;
+      border-right: 1.5px solid $borderColor;
       width: 92%;
       margin: 0 auto 0 0;
     }

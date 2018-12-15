@@ -1,0 +1,52 @@
+.materials {
+  @mixin atSmall {
+    background-color: $subBackgroundColor;
+    margin: 0;
+    text-align: center;
+  }
+  @mixin atLarge {
+    background-color: $mainBackroundColor;
+  }
+  &-title {
+    @mixin atSmall {
+      background-color: $titleBackgroundColor;
+      color: $titleFontColor;
+      padding: 10px 0;
+      margin: 0;
+      text-align: center;
+    }
+    @mixin atLarge {
+      margin: 20px 0 0 0;
+      border: 2.5px solid $borderColor;
+      border-radius: 30px 30px 30px 30px;
+      grid-column: 1 / span 2;
+    }
+  }
+  &-link {
+    @mixin atLarge {
+      background-color: $subBackgroundColor;
+      padding: 40px 0;
+      margin: auto;
+      border-bottom: 1.5px solid $borderColor;
+      border-left: 1.5px solid $borderColor;
+      border-right: 1.5px solid $borderColor;
+      border-radius: 0 0 15px 15px;
+      width: 80%;
+    }
+  }
+  &-by {
+    @mixin atSmall {
+      background-color: $titleBackgroundColor;
+      padding: 5px 0;
+      margin: auto 0 0 0;
+      color: $titleFontColor;
+    }
+    @mixin atLarge {
+      margin: 20px auto 0 auto;
+      border: 2.5px solid $borderColor;
+      padding: 2px 5px;
+      width: 90%;
+      border-radius: 30px 30px 30px 30px;
+    }
+  }
+}

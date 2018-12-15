@@ -25,7 +25,7 @@ class Home extends Component {
         <h1 className="home-title">
           Broderick’s Compendium: Plants and Fungi Across the Realm 2.0
         </h1>
-        <section>
+        <section className="home-about">
           <p>
             This version of the guide, includes the full plant guide with (by my
             count) 640* fantasy plant and fungal species for use in adventuring
@@ -33,7 +33,9 @@ class Home extends Component {
             updates for this version are the Wizards of the Coast creative
             licensing.
           </p>
-          <p>* I have a count of 639. Not sure which one I am missing.</p>
+          <p className="home--error">
+            * I have a count of 639. Not sure which one I am missing.
+          </p>
         </section>
         {!this.state.isLoading && <Materials data={this.state.data} />}
       </div>

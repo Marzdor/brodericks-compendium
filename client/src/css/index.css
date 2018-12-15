@@ -641,3 +641,144 @@ a {
       overflow-x: hidden
   }
   }
+
+@media (min-width: 320px) {
+
+.container-material {
+      display: flex;
+      flex-direction: column
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.container-material {
+      display: grid;
+      grid-template-columns: auto auto
+  }
+  }
+
+@media (min-width: 320px) {
+
+.materials {
+    background-color: #a7adc6;
+    margin: 0;
+    text-align: center
+}
+  }
+
+@media (min-width: 1024px) {
+
+.materials {
+    background-color: #a7a2a9
+}
+  }
+
+@media (min-width: 320px) {
+
+.materials-title {
+      background-color: #525b76;
+      color: #f7ede2;
+      padding: 10px 0;
+      margin: 0;
+      text-align: center
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.materials-title {
+      margin: 20px 0 0 0;
+      border: 2.5px solid #08090a;
+      border-radius: 30px 30px 30px 30px;
+      grid-column: 1 / span 2
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.materials-link {
+      background-color: #a7adc6;
+      padding: 40px 0;
+      margin: auto;
+      border-bottom: 1.5px solid #08090a;
+      border-left: 1.5px solid #08090a;
+      border-right: 1.5px solid #08090a;
+      border-radius: 0 0 15px 15px;
+      width: 80%
+  }
+  }
+
+@media (min-width: 320px) {
+
+.materials-by {
+      background-color: #525b76;
+      padding: 5px 0;
+      margin: auto 0 0 0;
+      color: #f7ede2
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.materials-by {
+      margin: 20px auto 0 auto;
+      border: 2.5px solid #08090a;
+      padding: 2px 5px;
+      width: 90%;
+      border-radius: 30px 30px 30px 30px
+  }
+  }
+
+@media (min-width: 320px) {
+
+.home-title {
+      background-color: #525b76;
+      color: #f7ede2;
+      text-align: center;
+      padding: 15px 10px;
+      margin: 0
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.home-title {
+      margin: 20px 0 0 0;
+      border: 2.5px solid #08090a;
+      border-radius: 40px 40px 40px 40px
+  }
+  }
+
+@media (min-width: 320px) {
+
+.home-about {
+      background-color: #a7adc6;
+      color: #08090a;
+      text-align: justify;
+      padding: 5px 10%;
+      line-height: 1.25;
+      margin: 0
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.home-about {
+      border-bottom: 1.5px solid #08090a;
+      border-left: 1.5px solid #08090a;
+      border-right: 1.5px solid #08090a;
+      border-radius: 0 0 15px 15px;
+      width: 92%;
+      margin: 0 auto 20px
+  }
+  }
+
+@media (min-width: 320px) {
+
+.home--error {
+      font-size: 0.75rem;
+      margin: 0;
+      text-align: center
+  }
+  }

@@ -15,4 +15,14 @@
       overflow-x: hidden;
     }
   }
+  &-material {
+    @mixin atSmall {
+      display: flex;
+      flex-direction: column;
+    }
+    @mixin atLarge {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+  }
 }

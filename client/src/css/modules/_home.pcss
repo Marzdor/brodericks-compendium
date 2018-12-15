@@ -1,0 +1,41 @@
+.home {
+  &-title {
+    @mixin atSmall {
+      background-color: $titleBackgroundColor;
+      color: $titleFontColor;
+      text-align: center;
+      padding: 15px 10px;
+      margin: 0;
+    }
+    @mixin atLarge {
+      margin: 20px 0 0 0;
+      border: 2.5px solid $borderColor;
+      border-radius: 40px 40px 40px 40px;
+    }
+  }
+  &-about {
+    @mixin atSmall {
+      background-color: $subBackgroundColor;
+      color: $borderColor;
+      text-align: justify;
+      padding: 5px 10%;
+      line-height: 1.25;
+      margin: 0;
+    }
+    @mixin atLarge {
+      border-bottom: 1.5px solid $borderColor;
+      border-left: 1.5px solid $borderColor;
+      border-right: 1.5px solid $borderColor;
+      border-radius: 0 0 15px 15px;
+      width: 92%;
+      margin: 0 auto 20px;
+    }
+  }
+  &--error {
+    @mixin atSmall {
+      font-size: 0.75rem;
+      margin: 0;
+      text-align: center;
+    }
+  }
+}
