@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
 const plants = require("./routes/api/plants");
+const materials = require("./routes/api/materials");
 
 const app = express();
 
@@ -24,6 +25,7 @@ mongoose
 
 // Use routes
 app.use("/api/plants", plants);
+app.use("/api/materials", materials);
 
 const port = process.env.PORT || 5000;
 
