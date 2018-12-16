@@ -27,15 +27,15 @@ const Scavenging = () => {
       <div>
         <h2 className="scaveng-title-sub">Medium</h2>
         <div className="scaveng-table">
-          <p className="scaveng-table--l">1 - 29</p>
+          <p className="scaveng-table--l">1 - 53</p>
           <p className="scaveng-table--r">Very Common</p>
-          <p className="scaveng-table--l">30 - 57</p>
+          <p className="scaveng-table--l">54 - 79</p>
           <p className="scaveng-table--r">Common</p>
-          <p className="scaveng-table--l">56 - 79</p>
-          <p className="scaveng-table--r">Uncommon</p>
           <p className="scaveng-table--l">80 - 91</p>
+          <p className="scaveng-table--r">Uncommon</p>
+          <p className="scaveng-table--l">92 - 96</p>
           <p className="scaveng-table--r">Rare</p>
-          <p className="scaveng-table--l">92 - 99</p>
+          <p className="scaveng-table--l">97 - 99</p>
           <p className="scaveng-table--r">Very Rare</p>
           <p className="scaveng-table--l">100</p>
           <p className="scaveng-table--r">Very Rare or Legendary</p>
@@ -47,15 +47,15 @@ const Scavenging = () => {
       <div>
         <h2 className="scaveng-title-sub">Hard</h2>
         <div className="scaveng-table">
-          <p className="scaveng-table--l">1 - 29</p>
+          <p className="scaveng-table--l">1 - 55</p>
           <p className="scaveng-table--r">Very Common</p>
-          <p className="scaveng-table--l">30 - 57</p>
+          <p className="scaveng-table--l">56 – 81</p>
           <p className="scaveng-table--r">Common</p>
-          <p className="scaveng-table--l">56 - 79</p>
+          <p className="scaveng-table--l">82 - 93</p>
           <p className="scaveng-table--r">Uncommon</p>
-          <p className="scaveng-table--l">80 - 91</p>
+          <p className="scaveng-table--l">94 - 98</p>
           <p className="scaveng-table--r">Rare</p>
-          <p className="scaveng-table--l">92 - 99</p>
+          <p className="scaveng-table--l">99</p>
           <p className="scaveng-table--r">Very Rare</p>
           <p className="scaveng-table--l">100</p>
           <p className="scaveng-table--r">Very Rare or Legendary</p>
