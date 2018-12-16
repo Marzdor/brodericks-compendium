@@ -484,14 +484,14 @@ a {
 @media (min-width: 320px) {
 
 .filter-check {
-      padding: 1.5px 1.5px 1.5px 15px
+      padding: 1px 1px 1px 5px
   }
   }
 
 @media (min-width: 320px) {
 
 .filter-label {
-      padding: 1.5px 1.5px 1.5px 5px
+      padding: 1px 1px 1px 5px
   }
   }
 
