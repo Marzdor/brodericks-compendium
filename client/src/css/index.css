@@ -660,6 +660,21 @@ a {
 
 @media (min-width: 320px) {
 
+.container-scaveng {
+      text-align: center
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.container-scaveng {
+      width: 80%;
+      margin: 0 auto
+  }
+  }
+
+@media (min-width: 320px) {
+
 .materials {
     background-color: #a7adc6;
     margin: 0;
@@ -781,4 +796,148 @@ a {
       margin: 0;
       text-align: center
   }
+  }
+
+@media (min-width: 320px) {
+
+.scaveng-title {
+      background-color: #525b76;
+      color: #f7ede2;
+      text-align: center;
+      padding: 15px 10px;
+      margin: 0
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.scaveng-title {
+      margin: 20px 0 0 0;
+      border: 2.5px solid #08090a;
+      border-radius: 40px 40px 40px 40px
+  }
+  }
+
+@media (min-width: 320px) {
+
+.scaveng-title-sub {
+        background-color: #525b76;
+        color: #f7ede2;
+        text-align: center;
+        padding: 15px 10px;
+        margin: 0
+    }
+  }
+
+@media (min-width: 1024px) {
+
+.scaveng-title-sub {
+        margin: 20px auto 0 auto;
+        border: 2.5px solid #08090a;
+        border-radius: 40px 40px 40px 40px;
+        width: 80%
+    }
+  }
+
+@media (min-width: 320px) {
+
+.scaveng-desc {
+      background-color: #a7adc6;
+      margin: 0;
+      padding: 0 0 15px 0
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.scaveng-desc {
+      border-bottom: 1.5px solid #08090a;
+      border-left: 1.5px solid #08090a;
+      border-right: 1.5px solid #08090a;
+      border-radius: 0 0 15px 15px;
+      width: 60%;
+      margin: 0 auto 20px
+  }
+  }
+
+@media (min-width: 320px) {
+
+.scaveng-rules {
+      background-color: #a7adc6;
+      margin: 0;
+      padding: 0 0 15px 0
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.scaveng-rules {
+      border-bottom: 1.5px solid #08090a;
+      border-left: 1.5px solid #08090a;
+      border-right: 1.5px solid #08090a;
+      border-radius: 0 0 15px 15px;
+      width: 92%;
+      text-align: justify;
+      margin: 0 auto 20px auto;
+      padding: 20px
+  }
+  }
+
+@media (min-width: 320px) {
+
+.scaveng-table {
+      display: grid;
+      grid-template-columns: auto auto;
+      background-color: #a7adc6;
+      padding: 15px 0
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.scaveng-table {
+      border-left: 1.5px solid #08090a;
+      border-right: 1.5px solid #08090a;
+      width: 60%;
+      margin: 0 auto 0
+  }
+  }
+
+@media (min-width: 320px) {
+
+.scaveng-table--l {
+        border-left: 1px solid #08090a;
+        border-top: 1px solid #08090a;
+        border-bottom: 1px solid #08090a;
+        margin: 0;
+        padding: 2.5px 0
+    }
+  }
+
+@media (min-width: 1024px) {
+
+.scaveng-table--l {
+        width: 60%;
+        margin: 0 0 0 auto
+    }
+  }
+
+@media (min-width: 320px) {
+
+.scaveng-table--r {
+        border-left: 1px solid #08090a;
+        border-right: 1px solid #08090a;
+        border-top: 1px solid #08090a;
+        border-bottom: 1px solid #08090a;
+        margin: 0;
+        padding: 2.5px 0
+    }
+  }
+
+@media (min-width: 1024px) {
+
+.scaveng-table--r {
+        width: 80%;
+        margin: 0 auto 0 0
+    }
   }
