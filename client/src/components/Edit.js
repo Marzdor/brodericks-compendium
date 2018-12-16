@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactMarkdown from "react-markdown";
 
 class Edit extends Component {
   constructor(props) {
@@ -53,7 +54,11 @@ class Edit extends Component {
       <div>
         <input id="search" autoComplete="off" placeholder="Enter Plant Name" />
         <button onClick={this.search}>Search</button>
-        <form action={"/api/plants/edit=" + this.state.id} method="post">
+        <form
+          action={"/api/plants/edit=" + this.state.id}
+          method="post"
+          className="container-edit"
+        >
           <label>Name</label>
           <input
             type="text"
@@ -88,9 +93,13 @@ class Edit extends Component {
             placeholder="Plant Description"
             onChange={this.handleChange}
             autoComplete="off"
+            className="edit-desc"
           />
-          <input type="submit" value="Update" />
+          <input type="submit" value="Update" className="edit-btn" />
         </form>
+        <div id="divreview">
+          <ReactMarkdown source={this.state.description} />
+        </div>
       </div>
     );
   }

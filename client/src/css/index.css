@@ -673,6 +673,14 @@ a {
   }
   }
 
+@media (min-width: 1024px) {
+
+.container-edit {
+      display: grid;
+      grid-template-columns: 100px auto
+  }
+  }
+
 @media (min-width: 320px) {
 
 .materials {
@@ -940,4 +948,23 @@ a {
         width: 80%;
         margin: 0 auto 0 0
     }
+  }
+
+@media (min-width: 1024px) {
+
+.edit-desc {
+      resize: none;
+      width: 100%;
+      height: 50vh;
+      grid-row: 5;
+      grid-column: 1 / span 2
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.edit-btn {
+      grid-row: 6;
+      grid-column: 1 / span 2
+  }
   }
