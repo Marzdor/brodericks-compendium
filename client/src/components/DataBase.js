@@ -51,7 +51,7 @@ class DataBase extends Component {
 
   render() {
     return (
-      <div className="container">
+      <section className="container">
         <Filter filterClick={this.filterClick} />
         {!this.state.isLoading && (
           <PlantsBody
@@ -59,7 +59,7 @@ class DataBase extends Component {
             filters={this.state.filters}
           />
         )}
-      </div>
+      </section>
     );
   }
 }

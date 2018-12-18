@@ -1,104 +1,63 @@
 .scaveng {
-  &-title {
+  &-table {
     @mixin atSmall {
-      background-color: $titleBackgroundColor;
-      color: $titleFontColor;
+      border-top: 2.5px solid black;
+      border-bottom: 2.5px solid black;
+      margin: 0 0 20px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       text-align: center;
-      padding: 15px 10px;
-      margin: 0;
     }
-    @mixin atLarge {
-      margin: 20px 0 0 0;
-      border: 2.5px solid $borderColor;
-      border-radius: 40px 40px 40px 40px;
-    }
-    &-sub {
+    &-title {
       @mixin atSmall {
-        background-color: $titleBackgroundColor;
-        color: $titleFontColor;
-        text-align: center;
-        padding: 15px 10px;
-        margin: 0;
+        grid-column: 1 / span 2;
       }
-      @mixin atLarge {
-        margin: 20px auto 0 auto;
-        border: 2.5px solid $borderColor;
-        border-radius: 40px 40px 40px 40px;
-        width: 80%;
+    }
+    &-desc {
+      @mixin atSmall {
+        grid-column: 1 / span 2;
+        text-align: justify;
+        width: 95%;
+        margin: 10px auto;
+        line-height: 1.25;
+      }
+    }
+    &-body {
+      @mixin atSmall {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-column: 1 / span 2;
+      }
+      &--last {
+        @mixin atSmall {
+          border-bottom: 1px solid black;
+        }
+      }
+      &-l {
+        @mixin atSmall {
+          grid-column: 1;
+          border-top: 1px solid black;
+          margin: 0;
+          padding: 5px 0;
+        }
+      }
+      &-r {
+        @mixin atSmall {
+          grid-column: 2;
+          border-top: 1px solid black;
+          margin: 0;
+          padding: 5px 0;
+          text-align: left;
+        }
       }
     }
   }
   &-desc {
     @mixin atSmall {
-      background-color: $subBackgroundColor;
-      margin: 0;
-      padding: 0 0 15px 0;
-    }
-    @mixin atLarge {
-      border-bottom: 1.5px solid $borderColor;
-      border-left: 1.5px solid $borderColor;
-      border-right: 1.5px solid $borderColor;
-      border-radius: 0 0 15px 15px;
-      width: 60%;
-      margin: 0 auto 20px;
-    }
-  }
-  &-rules {
-    @mixin atSmall {
-      background-color: $subBackgroundColor;
-      margin: 0;
-      padding: 0 0 15px 0;
-    }
-    @mixin atLarge {
-      border-bottom: 1.5px solid $borderColor;
-      border-left: 1.5px solid $borderColor;
-      border-right: 1.5px solid $borderColor;
-      border-radius: 0 0 15px 15px;
-      width: 92%;
       text-align: justify;
-      margin: 0 auto 20px auto;
-      padding: 20px;
-    }
-  }
-  &-table {
-    @mixin atSmall {
-      display: grid;
-      grid-template-columns: auto auto;
-      background-color: $subBackgroundColor;
-      padding: 15px 0;
-    }
-    @mixin atLarge {
-      border-left: 1.5px solid $borderColor;
-      border-right: 1.5px solid $borderColor;
-      width: 60%;
-      margin: 0 auto 0;
-    }
-    &--l {
-      @mixin atSmall {
-        border-left: 1px solid $borderColor;
-        border-top: 1px solid $borderColor;
-        border-bottom: 1px solid $borderColor;
-        margin: 0;
-        padding: 2.5px 0;
-      }
-      @mixin atLarge {
-        width: 60%;
-        margin: 0 0 0 auto;
-      }
-    }
-    &--r {
-      @mixin atSmall {
-        border-left: 1px solid $borderColor;
-        border-right: 1px solid $borderColor;
-        border-top: 1px solid $borderColor;
-        border-bottom: 1px solid $borderColor;
-        margin: 0;
-        padding: 2.5px 0;
-      }
-      @mixin atLarge {
-        width: 80%;
-        margin: 0 auto 0 0;
-      }
+      width: 95%;
+      margin: 10px auto;
+      line-height: 1.25;
     }
   }
 }

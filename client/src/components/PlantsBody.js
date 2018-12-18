@@ -54,29 +54,21 @@ const PlantsBody = props => {
     const location = [];
 
     info.location.forEach(el => {
-      location.push(
-        <p className="plant-title-sub" key={el}>
-          {el}
-        </p>
-      );
+      location.push(<p key={el}>{el}</p>);
     });
     plantEle.push(
-      <section className="plant" key={info.name}>
+      <section className="container-plants" key={info.name}>
         <h2 className="plant-name">{info.name}</h2>
-        <h3 className="plant-title plant--Left">Rarity</h3>
-        <p className="plant-title-sub plant--Left">{info.rarity}</p>
-        <h3 className="plant-title plant-title--loc plant--Right">Locations</h3>
-        <div className="plant-title-sub plant-title-sub--loc plant--Right">
-          {location}
-        </div>
-        <div className="plant-des">
-          <ReactMarkdown source={info.description} />
-        </div>
+        <h4>Rarity</h4>
+        <p>{info.rarity}</p>
+        <h4 className="plant-title-loc">Locations</h4>
+        <div>{location}</div>
+        <ReactMarkdown className="plant-desc" source={info.description} />
       </section>
     );
   }
   //
-  return <div className="container-plant">{plantEle}</div>;
+  return <div>{plantEle}</div>;
 };
 
 export default PlantsBody;
