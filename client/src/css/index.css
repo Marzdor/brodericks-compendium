@@ -408,7 +408,8 @@ a {
 @media (min-width: 320px) {
 
 .filter-btn {
-      margin: 20px 0 5px 0
+      margin: 20px 0 5px 0;
+      cursor: pointer
   }
   }
 
@@ -587,6 +588,13 @@ a {
 .materials-name {
       border: 2.5px solid black
   }
+  }
+
+@media (min-width: 320px) {
+
+.materials-name a {
+        color: black
+    }
   }
 
 @media (min-width: 320px) {
