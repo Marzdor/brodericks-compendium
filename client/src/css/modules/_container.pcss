@@ -1,4 +1,10 @@
 .container {
+  &-edit {
+    @mixin atSmall {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+  }
   &-materials {
     @mixin atSmall {
       text-align: center;

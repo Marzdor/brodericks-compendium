@@ -464,6 +464,14 @@ a {
 
 @media (min-width: 320px) {
 
+.container-edit {
+      display: grid;
+      grid-template-columns: auto auto
+  }
+  }
+
+@media (min-width: 320px) {
+
 .container-materials {
       text-align: center
   }
