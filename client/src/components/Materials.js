@@ -5,7 +5,7 @@ const Materials = props => {
   const materialEle = [];
   props.data.forEach(ele => {
     materialEle.push(
-      <div key={ele.name}>
+      <div className="materials" key={ele.name}>
         <h3 className="materials-name">
           <a href={ele.url}>{ele.name} </a>
         </h3>
@@ -17,7 +17,7 @@ const Materials = props => {
   return (
     <section className="container-materials">
       <h2 className="home-title">Included Source Materials</h2>
-      <div>{materialEle}</div>
+      <div className="container-materials-sub">{materialEle}</div>
     </section>
   );
 };

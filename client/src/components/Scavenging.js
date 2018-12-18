@@ -3,7 +3,7 @@ import React from "react";
 const Scavenging = () => {
   return (
     <section className="container-scaveng">
-      <h1>d100 Table for Scavenging Plants</h1>
+      <h1 className="scaveng-title">d100 Table for Scavenging Plants</h1>
       <div className="scaveng-table">
         <h2 className="scaveng-table-title">Easy</h2>
         <div className="scaveng-table-body">
@@ -71,7 +71,7 @@ const Scavenging = () => {
           rate, so it’s pretty hard to do well.
         </p>
       </div>
-      <h2>Scavenging Rules</h2>
+      <h2 className="scaveng-title">Scavenging Rules</h2>
       <p className="scaveng-desc">
         Usual method for nature scavenging is a nature check. 10-14 is mildly
         successful, 15-19 is successful, 20+ is very successful. This would mean

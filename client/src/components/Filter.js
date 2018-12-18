@@ -69,13 +69,13 @@ const Filter = props => {
         Location
       </h4>
       <section className="filter--hide filter--loc">
-        <div>{locList}</div>
+        <div className="filter-list">{locList}</div>
       </section>
       <h4 className="filter-btn" id="rar" onClick={toggle}>
         Rarity
       </h4>
       <section className="filter--hide filter--rar">
-        <div>{rList}</div>
+        <div className="filter-list">{rList}</div>
       </section>
     </div>
   );

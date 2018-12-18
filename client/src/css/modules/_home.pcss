@@ -11,12 +11,18 @@
       margin: 0 auto;
       line-height: 1.25;
     }
+    @mixin atLarge {
+      width: 75%;
+    }
     &--error {
       @mixin atSmall {
         width: 95%;
         margin: 0 auto;
         font-size: 0.75rem;
         padding: 15px 0 0 0;
+      }
+      @mixin atLarge {
+        width: 75%;
       }
     }
   }
