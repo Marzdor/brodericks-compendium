@@ -387,7 +387,15 @@ a {
       text-align: center;
       padding: 10px 0;
       border: 1px solid black;
-      color: black
+      color: black;
+      font-size: 1.125rem
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.nav-link {
+      font-size: 1.5rem
   }
   }
 
