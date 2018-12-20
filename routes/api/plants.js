@@ -20,33 +20,33 @@ router.get("/", (req, res) => {
 // @route GET api/plants
 // @desc  get spesific plant
 // @access Public
-router.get("/edit=:name", (req, res) => {
-  Plant.find({ name: req.params.name }).then(plants => res.json(plants));
-});
+// router.get("/edit=:name", (req, res) => {
+//   Plant.find({ name: req.params.name }).then(plants => res.json(plants));
+// });
 
 // @route POST api/plants
 // @desc  Edit a plant
 // @access Public
-router.post("/edit=:id", (req, res) => {
-  const newData = {
-    name: req.body.name,
-    rarity: req.body.rarity,
-    location: req.body.location.split(","),
-    description: req.body.description
-  };
-  Plant.findByIdAndUpdate(
-    req.params.id,
-    newData,
-    { new: true },
-    (err, Plant) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.redirect("/edit");
-      }
-    }
-  );
-});
+// router.post("/edit=:id", (req, res) => {
+//   const newData = {
+//     name: req.body.name,
+//     rarity: req.body.rarity,
+//     location: req.body.location.split(","),
+//     description: req.body.description
+//   };
+//   Plant.findByIdAndUpdate(
+//     req.params.id,
+//     newData,
+//     { new: true },
+//     (err, Plant) => {
+//       if (err) {
+//         console.log(err);
+//       } else {
+//         res.redirect("/edit");
+//       }
+//     }
+//   );
+// });
 
 // @route POST api/plants
 // @desc  Create a plant

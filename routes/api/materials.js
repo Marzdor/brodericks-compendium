@@ -20,34 +20,34 @@ router.get("/", (req, res) => {
 // @route GET api/materials
 // @desc  get spesific material
 // @access Public
-router.get("/edit=:name", (req, res) => {
-  Material.find({ name: req.params.name }).then(materials =>
-    res.json(materials)
-  );
-});
+// router.get("/edit=:name", (req, res) => {
+//   Material.find({ name: req.params.name }).then(materials =>
+//     res.json(materials)
+//   );
+// });
 
 // @route POST api/materials
 // @desc  Edit a material
 // @access Public
-router.post("/edit=:id", (req, res) => {
-  const newData = {
-    name: req.body.name,
-    by: req.body.by,
-    url: req.body.url
-  };
-  Material.findByIdAndUpdate(
-    req.params.id,
-    newData,
-    { new: true },
-    (err, Material) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.redirect("/edit");
-      }
-    }
-  );
-});
+// router.post("/edit=:id", (req, res) => {
+//   const newData = {
+//     name: req.body.name,
+//     by: req.body.by,
+//     url: req.body.url
+//   };
+//   Material.findByIdAndUpdate(
+//     req.params.id,
+//     newData,
+//     { new: true },
+//     (err, Material) => {
+//       if (err) {
+//         console.log(err);
+//       } else {
+//         res.redirect("/edit");
+//       }
+//     }
+//   );
+// });
 
 // @route POST api/materials
 // @desc  Create a material
