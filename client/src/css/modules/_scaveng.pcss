@@ -77,4 +77,25 @@
       grid-column: 1 / span 3;
     }
   }
+  &-roll {
+    @mixin atSmall {
+      display: grid;
+      grid-column: 1 / span 2;
+      width: 80%;
+      margin: 0 auto;
+    }
+    &-btn {
+      @mixin atSmall {
+        height: 7vh;
+        width: 50vw;
+        margin: 0 auto;
+        background-color: white;
+        border: 2px solid black;
+      }
+      @mixin atLarge {
+        height: 5vh;
+        width: 10vw;
+      }
+    }
+  }
 }
