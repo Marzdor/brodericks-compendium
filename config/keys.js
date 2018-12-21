@@ -1,4 +1,7 @@
-module.exports = {
-  mongoURI:
-    "mongodb://admin:qh2sj9bW7iCLGx6@ds225624.mlab.com:25624/plants_fungi"
-};
+const aws = require("aws-sdk");
+
+let s3 = new aws.S3({
+  accessKeyId: process.env.S3_KEY
+});
+
+module.exports = s3;
