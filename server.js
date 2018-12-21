@@ -13,7 +13,12 @@ const app = express();
 app.use(bodyParser.json());
 
 // DB Config
-const db = process.env.mongodb;
+let db ;
+if(process.env.NODE_ENV === "production"){
+  const db = process.env.mongodb;
+}else{
+  db = 
+}
 
 // Connect to Mongo
 mongoose
