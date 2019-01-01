@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 // DB Config
 let db;
 if (process.env.NODE_ENV === "production") {
-  const db = process.env.mongodb;
+  db = process.env.mongodb;
 } else {
   db = require("./config/key").mongoURI;
 }
