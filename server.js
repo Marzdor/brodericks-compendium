@@ -13,11 +13,11 @@ const app = express();
 app.use(bodyParser.json());
 
 // DB Config
-let db ;
-if(process.env.NODE_ENV === "production"){
+let db;
+if (process.env.NODE_ENV === "production") {
   const db = process.env.mongodb;
-}else{
-  db = 
+} else {
+  db = require("./config/key").mongoURI;
 }
 
 // Connect to Mongo
