@@ -27,7 +27,7 @@ const Filter = props => {
   // dropdown toggle
   function toggle(e) {
     document.querySelectorAll(".filter--" + e.target.id).forEach(el => {
-      el.classList.toggle("filter--hide");
+      el.classList.toggle("hide");
     });
   }
 
@@ -68,13 +68,13 @@ const Filter = props => {
       <h4 className="filter-btn" id="loc" onClick={toggle}>
         Location
       </h4>
-      <section className="filter--hide filter--loc">
+      <section className="hide filter--loc">
         <div className="filter-list">{locList}</div>
       </section>
       <h4 className="filter-btn" id="rar" onClick={toggle}>
         Rarity
       </h4>
-      <section className="filter--hide filter--rar">
+      <section className="hide filter--rar">
         <div className="filter-list">{rList}</div>
       </section>
     </div>

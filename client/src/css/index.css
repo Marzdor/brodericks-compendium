@@ -373,6 +373,13 @@ a {
 
 @media (min-width: 320px) {
 
+.hide {
+    display: none !important
+}
+  }
+
+@media (min-width: 320px) {
+
 .nav {
     display: flex;
     flex-direction: row;
@@ -449,13 +456,6 @@ a {
 
 @media (min-width: 320px) {
 
-.filter--hide {
-      display: none
-  }
-  }
-
-@media (min-width: 320px) {
-
 .plant {
     text-align: center
 }
@@ -475,7 +475,12 @@ a {
 @media (min-width: 320px) {
 
 .plant-name {
-      grid-column: 1 / span 2
+      text-align: center;
+      border: 3px solid black;
+      border-bottom: 0;
+      padding: 10px;
+      margin: 0;
+      cursor: pointer
   }
   }
 
@@ -499,7 +504,7 @@ a {
 
 .container-edit {
       display: grid;
-      grid-template-columns: auto auto
+      grid-template-columns: repeat(2, auto)
   }
   }
 
@@ -530,6 +535,14 @@ a {
 
 @media (min-width: 320px) {
 
+.container-loc {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr)
+  }
+  }
+
+@media (min-width: 320px) {
+
 .container-plants {
       text-align: center;
       display: grid;
@@ -541,8 +554,8 @@ a {
 @media (min-width: 1024px) {
 
 .container-plants {
-      margin: 20px 0;
-      border: 2.5px solid black
+      border: 2.5px solid black;
+      border-bottom: 0
   }
   }
 
@@ -653,7 +666,7 @@ a {
       border-bottom: 2.5px solid black;
       margin: 0 0 20px 0;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       text-align: center
   }
   }
@@ -705,7 +718,7 @@ a {
 @media (min-width: 600px) {
 
 .scaveng-table-body {
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: repeat(2, 1fr)
     }
   }
 

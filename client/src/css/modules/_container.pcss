@@ -6,7 +6,7 @@
   &-edit {
     @mixin atSmall {
       display: grid;
-      grid-template-columns: auto auto;
+      grid-template-columns: repeat(2, auto);
     }
   }
   &-materials {
@@ -28,6 +28,12 @@
       justify-items: center;
     }
   }
+  &-loc {
+    @mixin atSmall {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
   &-plants {
     @mixin atSmall {
       text-align: center;
@@ -36,8 +42,8 @@
       border-top: 2.5px solid black;
     }
     @mixin atLarge {
-      margin: 20px 0;
       border: 2.5px solid black;
+      border-bottom: 0;
     }
   }
   &-scaveng {

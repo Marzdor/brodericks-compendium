@@ -2,6 +2,13 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 
 const PlantsBody = props => {
+  // dropdown toggle
+  function toggle(e) {
+    const target = e.target.nextSibling;
+    console.log(target.classList);
+    target.classList.toggle("hide");
+  }
+  //
   // Check if any filters are active
   const activeLoc = [];
   const activeRar = [];
@@ -57,17 +64,22 @@ const PlantsBody = props => {
       location.push(<p key={el}>{el}</p>);
     });
     plantEle.push(
-      <section className="container-plants" key={info.name}>
-        <h2 className="plant-name">{info.name}</h2>
-        <h4>Rarity</h4>
-        <p>{info.rarity}</p>
-        <h4 className="plant-title-loc">Locations</h4>
-        <div>{location}</div>
-        <ReactMarkdown className="plant-desc" source={info.description} />
+      <section key={info.name}>
+        <h2 id={info.name} className="plant-name" onClick={toggle}>
+          {info.name}
+        </h2>
+        <div className="container-plants hide">
+          <h4>Rarity</h4>
+          <p>{info.rarity}</p>
+          <h4 className="plant-title-loc">Locations</h4>
+          <div className="container-loc">{location}</div>
+          <ReactMarkdown className="plant-desc" source={info.description} />
+        </div>
       </section>
     );
   }
   //
+
   return <div>{plantEle}</div>;
 };
 
