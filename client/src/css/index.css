@@ -492,7 +492,6 @@ a {
 .plant-name {
       text-align: center;
       border: 3px solid black;
-      border-bottom: 0;
       padding: 10px;
       margin: 0;
       cursor: pointer
@@ -503,7 +502,7 @@ a {
 
 .plant-title-loc {
         grid-column: 2;
-        grid-row: 2
+        grid-row: 1
     }
   }
 
