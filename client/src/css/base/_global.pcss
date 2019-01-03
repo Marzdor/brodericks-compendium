@@ -25,3 +25,17 @@ a {
     display: none !important;
   }
 }
+
+.active {
+  @mixin atSmall {
+    grid-column: 1 / span 3;
+  }
+  &-main {
+    & > h2 {
+      @mixin atSmall {
+        background-color: #d8d8d8;
+        padding: 20px;
+      }
+    }
+  }
+}

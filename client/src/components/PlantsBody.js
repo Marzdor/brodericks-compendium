@@ -2,11 +2,49 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 
 const PlantsBody = props => {
-  // dropdown toggle
+  // dropdown logic
+  let prevTargets = {};
+  //
+  function addClasses(targets) {
+    targets.mainNext.classList.toggle("hide");
+    targets.parMain.classList.toggle("active");
+    targets.parMain.classList.toggle("active-main");
+    if (targets.parPrev) {
+      targets.parPrev.classList.toggle("active");
+    }
+    if (targets.parNext) {
+      targets.parNext.classList.toggle("active");
+    }
+    prevTargets = targets;
+  }
   function toggle(e) {
-    const target = e.target.nextSibling;
-    console.log(target.classList);
-    target.classList.toggle("hide");
+    // Save all elements that I will need
+    const targets = {
+      main: e.target,
+      mainNext: e.target.nextSibling,
+      parMain: e.target.parentElement,
+      parPrev: e.target.parentElement.previousSibling,
+      parNext: e.target.parentElement.nextSibling
+    };
+    // 1st click error prevention
+    if (!prevTargets.hasOwnProperty("main")) {
+      addClasses(targets);
+      prevTargets = targets;
+    } else {
+      // clear previous css class names
+      if (prevTargets.main.innerHTML !== targets.main.innerHTML) {
+        document.querySelectorAll(".active").forEach(ele => {
+          ele.classList.toggle("active");
+        });
+        document.querySelectorAll(".active-main").forEach(ele => {
+          ele.classList.toggle("active-main");
+          ele.lastChild.classList.toggle("hide");
+        });
+      }
+      // set new css classes
+      addClasses(targets);
+      prevTargets = targets;
+    }
   }
   //
   // Check if any filters are active
@@ -65,10 +103,10 @@ const PlantsBody = props => {
     });
     plantEle.push(
       <section key={info.name}>
-        <h2 id={info.name} className="plant-name" onClick={toggle}>
+        <h2 className="plant-name" onClick={toggle}>
           {info.name}
         </h2>
-        <div className="container-plants hide">
+        <div className="container-plant hide">
           <h4>Rarity</h4>
           <p>{info.rarity}</p>
           <h4 className="plant-title-loc">Locations</h4>
@@ -80,7 +118,7 @@ const PlantsBody = props => {
   }
   //
 
-  return <div>{plantEle}</div>;
+  return <div className="container-plants">{plantEle}</div>;
 };
 
 export default PlantsBody;

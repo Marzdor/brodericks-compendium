@@ -34,16 +34,22 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
-  &-plants {
+  &-plant {
     @mixin atSmall {
       text-align: center;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       border-top: 2.5px solid black;
     }
     @mixin atLarge {
       border: 2.5px solid black;
       border-bottom: 0;
+    }
+  }
+  &-plants {
+    @mixin atLarge {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
   &-scaveng {

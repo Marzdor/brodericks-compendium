@@ -380,6 +380,21 @@ a {
 
 @media (min-width: 320px) {
 
+.active {
+    grid-column: 1 / span 3
+}
+  }
+
+@media (min-width: 320px) {
+
+.active-main > h2 {
+        background-color: #d8d8d8;
+        padding: 20px
+    }
+  }
+
+@media (min-width: 320px) {
+
 .nav {
     display: flex;
     flex-direction: row;
@@ -543,19 +558,27 @@ a {
 
 @media (min-width: 320px) {
 
-.container-plants {
+.container-plant {
       text-align: center;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       border-top: 2.5px solid black
   }
   }
 
 @media (min-width: 1024px) {
 
-.container-plants {
+.container-plant {
       border: 2.5px solid black;
       border-bottom: 0
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.container-plants {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr)
   }
   }
 
