@@ -8,8 +8,12 @@
       grid-template-columns: 1fr 1fr;
       text-align: center;
     }
-    @mixin atLarge {
+    @mixin atMedium {
       border: 2.5px solid black;
+      width: 90%;
+      margin: 0 auto 20px auto;
+    }
+    @mixin atLarge {
       width: 80%;
       margin: 0 auto;
     }
@@ -33,7 +37,7 @@
         grid-template-columns: auto auto;
         grid-column: 1 / span 2;
       }
-      @mixin atLarge {
+      @mixin atMedium {
         grid-template-columns: 1fr 1fr;
       }
       &--last {
@@ -92,8 +96,11 @@
         background-color: white;
         border: 2px solid black;
       }
-      @mixin atLarge {
+      @mixin atMedium {
         height: 5vh;
+        width: 35vw;
+      }
+      @mixin atLarge {
         width: 10vw;
       }
     }
