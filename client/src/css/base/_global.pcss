@@ -27,7 +27,10 @@ a {
 }
 
 .active {
-  @mixin atSmall {
+  @mixin atMedium {
+    grid-column: 1 / span 2;
+  }
+  @mixin atLarge {
     grid-column: 1 / span 3;
   }
   &-main {

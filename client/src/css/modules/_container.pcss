@@ -47,8 +47,12 @@
     }
   }
   &-plants {
-    @mixin atLarge {
+    @mixin atMedium {
       display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      min-height: 100%;
+    }
+    @mixin atLarge {
       grid-template-columns: repeat(3, 1fr);
     }
   }
