@@ -6,11 +6,10 @@ import {
   Redirect
 } from "react-router-dom";
 
-import Home from "./components/Home";
-import DataBase from "./components/DataBase";
+import Splash from "./components/Splash";
+import Browse from "./components/Browse";
 import Scavenging from "./components/Scavenging";
 import Error from "./components/Error";
-import Nav from "./components/Nav";
 import Edit from "./components/Edit";
 
 const auth = {
@@ -82,10 +81,9 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Nav />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/plants&fungi" component={DataBase} />
+            <Route exact path="/" component={Splash} />
+            <Route path="/browse" component={Browse} />
             <Route path="/scavenging" component={Scavenging} />
             <Route path="/login" component={Login} />
             <PrivateRoute path="/edit" component={Edit} />
