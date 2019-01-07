@@ -1,68 +1,14 @@
+div {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
 .container {
-  @mixin atLarge {
-    width: 80%;
-    margin: 0 auto;
-  }
-  &-edit {
+  &-splash {
     @mixin atSmall {
-      display: grid;
-      grid-template-columns: repeat(2, auto);
-    }
-  }
-  &-materials {
-    @mixin atSmall {
-      text-align: center;
-    }
-    &-sub {
-      @mixin atLarge {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 1fr;
-      }
-    }
-  }
-  &-filter {
-    @mixin atSmall {
-      display: grid;
-      grid-template-columns: auto auto;
-      justify-items: center;
-    }
-  }
-  &-loc {
-    @mixin atSmall {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  &-plant {
-    @mixin atSmall {
-      text-align: center;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      border-top: 2.5px solid black;
-    }
-    @mixin atLarge {
-      border: 2.5px solid black;
-      border-bottom: 0;
-    }
-  }
-  &-plants {
-    @mixin atMedium {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      min-height: 100%;
-    }
-    @mixin atLarge {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  &-scaveng {
-    @mixin atSmall {
-      text-align: center;
-    }
-    @mixin atLarge {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      margin: 35vh auto;
     }
   }
 }

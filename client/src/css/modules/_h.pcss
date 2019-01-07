@@ -1,0 +1,26 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.h {
+  &-splash {
+    &-title {
+      @mixin atSmall {
+        font-size: 1.5rem;
+        margin: 1vh 0;
+      }
+    }
+    &-sub {
+      @mixin atSmall {
+        font-size: 1.125rem;
+        width: 60vw;
+        margin: 1vh 0 3vh 0;
+      }
+    }
+  }
+}
