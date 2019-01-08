@@ -90,7 +90,6 @@ const PlantsBody = props => {
     });
   }
   //
-
   // Create element for a plant
   function createPlant(info) {
     const location = [];

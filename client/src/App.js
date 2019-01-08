@@ -77,13 +77,41 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 );
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      plants: [],
+      names: [],
+      isLoading: true
+    };
+  }
+  componentDidMount() {
+    fetch("/api/plants")
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        const newNames = data.reduce((acc, cur) => {
+          return acc.concat(cur.name);
+        }, []);
+
+        this.setState({
+          plants: data,
+          names: newNames,
+          isLoading: false
+        });
+      });
+  }
   render() {
     return (
       <Router>
         <div>
           <Switch>
             <Route exact path="/" component={Splash} />
-            <Route path="/browse" component={Browse} />
+            <Route
+              path="/browse"
+              render={props => <Browse {...props} info={this.state} />}
+            />
             <Route path="/scavenging" component={Scavenging} />
             <Route path="/login" component={Login} />
             <PrivateRoute path="/edit" component={Edit} />
