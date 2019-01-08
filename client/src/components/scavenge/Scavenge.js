@@ -4,17 +4,18 @@ import { withRouter } from "react-router-dom";
 class Scavenge extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
 
     this.selected = this.props.scavenge.selected;
     this.tableToUse = this.props.scavenge.difficultyOptions[
       this.selected.difficulty
     ];
+    this.criteria = { rarity: "", location: this.selected.location };
 
+    this.setup = this.setup.bind(this);
     this.setResult = this.setResult.bind(this);
   }
   componentDidMount() {
-    // Check if any options skipped
+    // Check if any options are not set
     if (this.selected.location === "") {
       this.props.history.push("/scavenge/location");
     } else if (this.selected.difficulty === "") {
@@ -22,38 +23,56 @@ class Scavenge extends Component {
     } else if (this.selected.mode === "") {
       this.props.history.push("/scavenge/mode");
     } else {
-      this.setResult(this.props.scavenge.selected.rolls.first);
+      this.setup();
     }
     //
+  }
+  setup() {
+    const rolls = this.selected.rolls;
+
+    switch (this.selected.mode) {
+      case "Disadvantage":
+        this.setResult(Math.min(rolls.first, rolls.second));
+        break;
+      case "Normal":
+        this.setResult(this.selected.rolls.first);
+        break;
+      case "Advantage":
+        this.setResult(Math.max(rolls.first, rolls.second));
+        break;
+      default:
+        console.log("error: " + this.selected.mode);
+        break;
+    }
   }
 
   setResult(roll) {
     let result;
     switch (true) {
       case roll >= this.tableToUse[0][0] && roll <= this.tableToUse[0][1]:
-        result = roll + " - " + this.tableToUse[0][2];
+        result = this.tableToUse[0][2];
         break;
       case roll >= this.tableToUse[1][0] && roll <= this.tableToUse[1][1]:
-        result = roll + " - " + this.tableToUse[1][2];
+        result = this.tableToUse[1][2];
         break;
       case roll >= this.tableToUse[2][0] && roll <= this.tableToUse[2][1]:
-        result = roll + " - " + this.tableToUse[2][2];
+        result = this.tableToUse[2][2];
         break;
       case roll >= this.tableToUse[3][0] && roll <= this.tableToUse[3][1]:
-        result = roll + " - " + this.tableToUse[3][2];
+        result = this.tableToUse[3][2];
         break;
       case roll >= this.tableToUse[4][0] && roll <= this.tableToUse[4][1]:
-        result = roll + " - " + this.tableToUse[4][2];
+        result = this.tableToUse[4][2];
         break;
       case roll >= this.tableToUse[5][0] && roll <= this.tableToUse[5][1]:
-        result = roll + " - " + this.tableToUse[5][2];
+        result = this.tableToUse[5][2];
         break;
       default:
         console.log("error: " + roll);
     }
-    console.log(result);
+    this.criteria.rarity = result;
   }
-  // TODO set mode
+
   // TODO get random plant based on result
   render() {
     return <div>Scavenge</div>;
