@@ -7,7 +7,7 @@ const Splash = () => {
       <h1 className="h-splash-title">Brodericks Compendium</h1>
       <h2 className="h-splash-sub">Plants and Fungi Across the Realm 2.0</h2>
       <Link to="/browse">Browse</Link>
-      <Link to="/scavange">Scavenge</Link>
+      <Link to="/scavenge">Scavenge</Link>
     </div>
   );
 };
