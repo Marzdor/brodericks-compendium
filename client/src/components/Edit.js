@@ -49,10 +49,24 @@ class Edit extends Component {
         console.log("target name : " + e.target.name + " not found");
     }
   }
+
   render() {
+    // create options for dropdown element
+    const options = [];
+    this.props.names.forEach(plant => {
+      options.push(<option key={"op: " + plant} value={plant} />);
+    });
+    //
+
     return (
       <div>
-        <input id="search" autoComplete="off" placeholder="Enter Plant Name" />
+        <datalist id="op">{options}</datalist>
+        <input
+          id="search"
+          autoComplete="off"
+          list="op"
+          placeholder="Enter Plant Name"
+        />
         <button onClick={this.search}>Search</button>
         <form
           action={"/api/plants/edit=" + this.state.id}
