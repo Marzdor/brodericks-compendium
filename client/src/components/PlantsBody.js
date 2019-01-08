@@ -4,7 +4,6 @@ import ReactMarkdown from "react-markdown";
 const PlantsBody = props => {
   // dropdown logic
   let prevTargets = {};
-  //
   function addClasses(targets) {
     targets.mainNext.classList.toggle("hide");
     targets.parMain.classList.toggle("active");
@@ -73,17 +72,17 @@ const PlantsBody = props => {
   let dataToShow = [];
 
   if (lCount === 12 && rCount === 6) {
-    dataToShow = props.plantData;
+    dataToShow = props.plants;
   } else if (lCount < 12 && rCount === 6) {
-    dataToShow = props.plantData.filter(el => {
+    dataToShow = props.plants.filter(el => {
       return activeLoc.every(r => el.location.indexOf(r) !== -1);
     });
   } else if (lCount === 12 && rCount < 6) {
-    dataToShow = props.plantData.filter(el => {
+    dataToShow = props.plants.filter(el => {
       return activeRar.indexOf(el.rarity) !== -1;
     });
   } else {
-    dataToShow = props.plantData.filter(el => {
+    dataToShow = props.plants.filter(el => {
       return (
         activeLoc.every(r => el.location.indexOf(r) !== -1) &&
         activeRar.indexOf(el.rarity) !== -1
@@ -91,13 +90,10 @@ const PlantsBody = props => {
     });
   }
   //
-  // creating elements
-  const plantEle = [];
 
-  for (let plant in dataToShow) {
-    const info = dataToShow[plant];
+  // Create element for a plant
+  function createPlant(info) {
     const location = [];
-
     info.location.forEach(el => {
       location.push(<p key={el}>{el}</p>);
     });
@@ -115,6 +111,16 @@ const PlantsBody = props => {
         </div>
       </section>
     );
+  }
+  //
+  const plantEle = [];
+  for (let plant in dataToShow) {
+    const info = dataToShow[plant];
+    if (props.filteredNames.length === 0) {
+      createPlant(info);
+    } else if (props.filteredNames.indexOf(info.name) >= 0) {
+      createPlant(info);
+    }
   }
   //
 

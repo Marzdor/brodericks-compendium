@@ -62,9 +62,17 @@ const Filter = props => {
     }
   }
   //
-
+  // create options for dropdown element
+  const options = [];
+  props.plantNames.forEach(plant => {
+    options.push(<option key={"op: " + plant} value={plant} />);
+  });
+  //
   return (
     <div className="container-filter">
+      <datalist id="op">{options}</datalist>
+      <input type="text" list="op" />
+      <button onClick={props.searchClick}>Search</button>
       <h4 className="filter-btn" id="loc" onClick={toggle}>
         Location
       </h4>
