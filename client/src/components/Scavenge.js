@@ -1,6 +1,6 @@
 import React from "react";
 
-const Scavenging = () => {
+const Scavenge = () => {
   const tableData = {
     easy: [
       [1, 29, "Very Common"],
@@ -151,4 +151,4 @@ const Scavenging = () => {
   );
 };
 
-export default Scavenging;
+export default Scavenge;

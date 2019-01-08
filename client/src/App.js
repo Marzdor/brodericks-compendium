@@ -8,7 +8,7 @@ import {
 
 import Splash from "./components/Splash";
 import Browse from "./components/Browse";
-import Scavenging from "./components/Scavenging";
+import Scavenge from "./components/Scavenge";
 import Error from "./components/Error";
 import Edit from "./components/Edit";
 
@@ -112,7 +112,7 @@ class App extends Component {
               path="/browse"
               render={props => <Browse {...props} info={this.state} />}
             />
-            <Route path="/scavenging" component={Scavenging} />
+            <Route path="/scavenge" component={Scavenge} />
             <Route path="/login" component={Login} />
             <PrivateRoute path="/edit" component={Edit} />
             <Route component={Error} />
