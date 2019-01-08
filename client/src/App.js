@@ -6,15 +6,17 @@ import {
   Redirect
 } from "react-router-dom";
 
-import Splash from "./components/Splash";
+// Components
 import Browse from "./components/Browse";
-import Scavenge from "./components/scavenge/Scavenge";
-import ScavengeLoc from "./components/scavenge/Location";
-import ScavengeDiff from "./components/scavenge/Difficulty";
-import ScavengeMode from "./components/scavenge/Mode";
-import Error from "./components/Error";
 import Edit from "./components/Edit";
+import Error from "./components/Error";
+import Scavenge from "./components/scavenge/Scavenge";
+import ScavengeDiff from "./components/scavenge/Difficulty";
+import ScavengeLoc from "./components/scavenge/Location";
+import ScavengeMode from "./components/scavenge/Mode";
+import Splash from "./components/Splash";
 
+// Private Route Logic
 const auth = {
   isAuthenticated: false,
   authenticate(cb) {
@@ -78,6 +80,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     }
   />
 );
+//
 
 class App extends Component {
   constructor(props) {
@@ -142,6 +145,7 @@ class App extends Component {
     this.modeClicked = this.modeClicked.bind(this);
   }
   componentDidMount() {
+    // Get all data
     fetch("/api/plants")
       .then(res => {
         return res.json();
@@ -157,30 +161,37 @@ class App extends Component {
           isLoading: false
         });
       });
+    //
   }
+  // Set location
   locClicked(e) {
     const updatedScavenge = this.state.scavenge;
     updatedScavenge.selected.location = e.target.innerHTML;
     this.setState({ scavenge: updatedScavenge });
   }
+  //
+  // Set difficulty
   diffClicked(e) {
     const updatedScavenge = this.state.scavenge;
     updatedScavenge.selected.difficulty = e.target.id;
-
+    // Make both rolls
     updatedScavenge.selected.rolls.first = Math.round(
       Math.random() * (100 - 1) + 1
     );
     updatedScavenge.selected.rolls.second = Math.round(
       Math.random() * (100 - 1) + 1
     );
+    //
     this.setState({ scavenge: updatedScavenge });
   }
+  //
+  // Set Mode
   modeClicked(e) {
     const updatedScavenge = this.state.scavenge;
     updatedScavenge.selected.mode = e.target.innerHTML;
-
     this.setState({ scavenge: updatedScavenge });
   }
+  //
 
   render() {
     return (
@@ -195,7 +206,7 @@ class App extends Component {
             exact
             path="/scavenge"
             render={props => (
-              <Scavenge {...props} selected={this.state.scavenge.selected} />
+              <Scavenge {...props} scavenge={this.state.scavenge} />
             )}
           />
           <Route
