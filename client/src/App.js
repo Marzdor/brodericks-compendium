@@ -11,7 +11,7 @@ import Browse from "./components/Browse";
 import Scavenge from "./components/scavenge/Scavenge";
 import ScavengeLoc from "./components/scavenge/Location";
 import ScavengeDiff from "./components/scavenge/Difficulty";
-import ScavengeRoll from "./components/scavenge/Roll";
+import ScavengeMode from "./components/scavenge/Mode";
 import Error from "./components/Error";
 import Edit from "./components/Edit";
 
@@ -88,6 +88,32 @@ class App extends Component {
         names: []
       },
       scavenge: {
+        difficultyOptions: {
+          easy: [
+            [1, 29, "Very Common"],
+            [30, 57, "Common"],
+            [56, 79, "Uncommon"],
+            [80, 91, "Rare"],
+            [92, 99, "Very Rare"],
+            [100, 100, "Very Rare or Legendary"]
+          ],
+          medium: [
+            [1, 53, "Very Common"],
+            [54, 79, "Common"],
+            [80, 91, "Uncommon"],
+            [92, 96, "Rare"],
+            [97, 99, "Very Rare"],
+            [100, 100, "Very Rare or Legendary"]
+          ],
+          hard: [
+            [1, 55, "Very Common"],
+            [56, 81, "Common"],
+            [82, 93, "Uncommon"],
+            [94, 98, "Rare"],
+            [99, 99, "Very Rare"],
+            [100, 100, "Very Rare or Legendary"]
+          ]
+        },
         locations: [
           "Arctic",
           "Cities",
@@ -105,14 +131,15 @@ class App extends Component {
         selected: {
           location: "",
           difficulty: "",
-          roll: ""
+          mode: "",
+          rolls: { first: 0, second: 0 }
         }
       },
       isLoading: true
     };
     this.locClicked = this.locClicked.bind(this);
     this.diffClicked = this.diffClicked.bind(this);
-    this.rollClicked = this.rollClicked.bind(this);
+    this.modeClicked = this.modeClicked.bind(this);
   }
   componentDidMount() {
     fetch("/api/plants")
@@ -139,13 +166,22 @@ class App extends Component {
   diffClicked(e) {
     const updatedScavenge = this.state.scavenge;
     updatedScavenge.selected.difficulty = e.target.id;
+
+    updatedScavenge.selected.rolls.first = Math.round(
+      Math.random() * (100 - 1) + 1
+    );
+    updatedScavenge.selected.rolls.second = Math.round(
+      Math.random() * (100 - 1) + 1
+    );
     this.setState({ scavenge: updatedScavenge });
   }
-  rollClicked(e) {
+  modeClicked(e) {
     const updatedScavenge = this.state.scavenge;
-    updatedScavenge.selected.roll = e.target.innerHTML;
+    updatedScavenge.selected.mode = e.target.innerHTML;
+
     this.setState({ scavenge: updatedScavenge });
   }
+
   render() {
     return (
       <Router>
@@ -175,13 +211,17 @@ class App extends Component {
           <Route
             path="/scavenge/difficulty"
             render={props => (
-              <ScavengeDiff {...props} diffClicked={this.diffClicked} />
+              <ScavengeDiff
+                {...props}
+                diffClicked={this.diffClicked}
+                tableData={this.state.scavenge.difficultyOptions}
+              />
             )}
           />
           <Route
-            path="/scavenge/roll"
+            path="/scavenge/mode"
             render={props => (
-              <ScavengeRoll {...props} rollClicked={this.rollClicked} />
+              <ScavengeMode {...props} modeClicked={this.modeClicked} />
             )}
           />
           <Route path="/login" component={Login} />
