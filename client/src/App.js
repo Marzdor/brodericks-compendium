@@ -63,7 +63,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     {...rest}
     render={props =>
       auth.isAuthenticated === true ? (
-        <Component {...props} />
+        <Component {...props} {...rest} />
       ) : (
         <Redirect
           to={{
@@ -114,7 +114,11 @@ class App extends Component {
             />
             <Route path="/scavenge" component={Scavenge} />
             <Route path="/login" component={Login} />
-            <PrivateRoute path="/edit" component={Edit} />
+            <PrivateRoute
+              path="/edit"
+              component={Edit}
+              names={this.state.names}
+            />
             <Route component={Error} />
           </Switch>
         </div>
