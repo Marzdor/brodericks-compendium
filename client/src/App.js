@@ -8,7 +8,10 @@ import {
 
 import Splash from "./components/Splash";
 import Browse from "./components/Browse";
-import Scavenge from "./components/Scavenge";
+import Scavenge from "./components/scavenge/Scavenge";
+import ScavengeLoc from "./components/scavenge/Location";
+import ScavengeDiff from "./components/scavenge/Difficulty";
+import ScavengeRoll from "./components/scavenge/Roll";
 import Error from "./components/Error";
 import Edit from "./components/Edit";
 
@@ -80,10 +83,36 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      plants: [],
-      names: [],
+      data: {
+        plants: [],
+        names: []
+      },
+      scavenge: {
+        locations: [
+          "Arctic",
+          "Cities",
+          "Coastal",
+          "Deserts",
+          "Forests",
+          "Jungles",
+          "Mountains",
+          "Oceans",
+          "Plains",
+          "Rivers",
+          "Swamps",
+          "Underdark/Caves"
+        ],
+        selected: {
+          location: "",
+          difficulty: "",
+          roll: ""
+        }
+      },
       isLoading: true
     };
+    this.locClicked = this.locClicked.bind(this);
+    this.diffClicked = this.diffClicked.bind(this);
+    this.rollClicked = this.rollClicked.bind(this);
   }
   componentDidMount() {
     fetch("/api/plants")
@@ -91,37 +120,78 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        const newNames = data.reduce((acc, cur) => {
+        const newData = {};
+        newData.names = data.reduce((acc, cur) => {
           return acc.concat(cur.name);
         }, []);
-
+        newData.plants = data;
         this.setState({
-          plants: data,
-          names: newNames,
+          data: newData,
           isLoading: false
         });
       });
   }
+  locClicked(e) {
+    const updatedScavenge = this.state.scavenge;
+    updatedScavenge.selected.location = e.target.innerHTML;
+    this.setState({ scavenge: updatedScavenge });
+  }
+  diffClicked(e) {
+    const updatedScavenge = this.state.scavenge;
+    updatedScavenge.selected.difficulty = e.target.id;
+    this.setState({ scavenge: updatedScavenge });
+  }
+  rollClicked(e) {
+    const updatedScavenge = this.state.scavenge;
+    updatedScavenge.selected.roll = e.target.innerHTML;
+    this.setState({ scavenge: updatedScavenge });
+  }
   render() {
     return (
       <Router>
-        <div>
-          <Switch>
-            <Route exact path="/" component={Splash} />
-            <Route
-              path="/browse"
-              render={props => <Browse {...props} info={this.state} />}
-            />
-            <Route path="/scavenge" component={Scavenge} />
-            <Route path="/login" component={Login} />
-            <PrivateRoute
-              path="/edit"
-              component={Edit}
-              names={this.state.names}
-            />
-            <Route component={Error} />
-          </Switch>
-        </div>
+        <Switch>
+          <Route exact path="/" component={Splash} />
+          <Route
+            path="/browse"
+            render={props => <Browse {...props} info={this.state.data} />}
+          />
+          <Route
+            exact
+            path="/scavenge"
+            render={props => (
+              <Scavenge {...props} selected={this.state.scavenge.selected} />
+            )}
+          />
+          <Route
+            path="/scavenge/location"
+            render={props => (
+              <ScavengeLoc
+                {...props}
+                locations={this.state.scavenge.locations}
+                locClicked={this.locClicked}
+              />
+            )}
+          />
+          <Route
+            path="/scavenge/difficulty"
+            render={props => (
+              <ScavengeDiff {...props} diffClicked={this.diffClicked} />
+            )}
+          />
+          <Route
+            path="/scavenge/roll"
+            render={props => (
+              <ScavengeRoll {...props} rollClicked={this.rollClicked} />
+            )}
+          />
+          <Route path="/login" component={Login} />
+          <PrivateRoute
+            path="/edit"
+            component={Edit}
+            names={this.state.data.names}
+          />
+          <Route component={Error} />
+        </Switch>
       </Router>
     );
   }
