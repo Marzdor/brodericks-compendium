@@ -35,26 +35,32 @@ const Filter = props => {
   for (let key in filters) {
     if (key[0] === "l") {
       locList.push(
-        <div key={key + " : " + filters[key]}>
+        <div className="filter-container" key={key + " : " + filters[key]}>
           <input
+            className="filter-checkbox"
             onClick={props.filterClick}
             type="checkbox"
             id={key}
             name={key}
           />
-          <label htmlFor={key}>{filters[key]}</label>
+          <label className="filter-checkbox-label" htmlFor={key}>
+            {filters[key]}
+          </label>
         </div>
       );
     } else {
       rList.push(
-        <div key={key + " : " + filters[key]}>
+        <div className="filter-container" key={key + " : " + filters[key]}>
           <input
+            className="filter-checkbox"
             onClick={props.filterClick}
             type="checkbox"
             id={key}
             name={key}
           />
-          <label htmlFor={key}>{filters[key]}</label>
+          <label className="filter-checkbox-label" htmlFor={key}>
+            {filters[key]}
+          </label>
         </div>
       );
     }
@@ -74,15 +80,11 @@ const Filter = props => {
       <h4 id="loc" onClick={toggle}>
         Location
       </h4>
-      <section className="hide filter--loc">
-        <div>{locList}</div>
-      </section>
+      <div className="hide filter--loc">{locList}</div>
       <h4 id="rar" onClick={toggle}>
         Rarity
       </h4>
-      <section className="hide filter--rar">
-        <div>{rList}</div>
-      </section>
+      <div className="hide filter--rar">{rList}</div>
     </div>
   );
 };

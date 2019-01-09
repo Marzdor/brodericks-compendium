@@ -1,0 +1,59 @@
+.filter {
+  &-container {
+    @mixin atSmall {
+      grid-template-columns: auto 1fr;
+    }
+  }
+  &-checkbox {
+    @mixin atSmall {
+      display: none;
+    }
+    &:checked + label:before,
+    label:hover:before {
+      @mixin atSmall {
+        content: "\2718";
+        color: #000000;
+        text-align: center;
+        line-height: 16px;
+      }
+    }
+    &-label {
+      @mixin atSmall {
+        display: inline-block;
+        position: relative;
+        padding-left: 25px;
+        font-size: 1rem;
+        line-height: 20px;
+        margin: 1vh auto 0 auto;
+      }
+      &:before {
+        @mixin atSmall {
+          line-height: 20px;
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          left: 0;
+          background-color: transparent;
+          border: 1px solid #000000;
+        }
+      }
+    }
+  }
+
+  &--loc {
+    @mixin atSmall {
+      grid-template-columns: repeat(2, 1fr);
+      width: 90vw;
+      margin: 0 auto;
+    }
+  }
+  &--rar {
+    @mixin atSmall {
+      grid-template-columns: repeat(2, 1fr);
+      width: 90vw;
+      margin: 0 auto;
+    }
+  }
+}

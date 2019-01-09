@@ -367,14 +367,13 @@ button:focus {
   outline: none;
 }
 
-a {
+a,
+button {
   background-color: transparent;
-  border: 2px solid black;
-  border-radius: 20px;
-  padding: 5px 15px 5px 15px;
   color: black;
   font-weight: 600;
   text-decoration: none;
+  border: none;
 }
 
 div {
@@ -426,6 +425,76 @@ h6 {
 
 @media (min-width: 320px) {
 
+.filter-container {
+      grid-template-columns: auto 1fr
+  }
+  }
+
+@media (min-width: 320px) {
+
+.filter-checkbox {
+      display: none
+  }
+  }
+
+@media (min-width: 320px) {
+
+.filter-checkbox:checked + label:before,
+    .filter-checkbox label:hover:before {
+        content: "\2718";
+        color: #000000;
+        text-align: center;
+        line-height: 16px
+    }
+  }
+
+@media (min-width: 320px) {
+
+.filter-checkbox-label {
+        display: inline-block;
+        position: relative;
+        padding-left: 25px;
+        font-size: 1rem;
+        line-height: 20px;
+        margin: 1vh auto 0 auto
+    }
+  }
+
+@media (min-width: 320px) {
+
+.filter-checkbox-label:before {
+          line-height: 20px;
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          left: 0;
+          background-color: transparent;
+          border: 1px solid #000000
+      }
+  }
+
+@media (min-width: 320px) {
+
+.filter--loc {
+      grid-template-columns: repeat(2, 1fr);
+      width: 90vw;
+      margin: 0 auto
+  }
+  }
+
+@media (min-width: 320px) {
+
+.filter--rar {
+      grid-template-columns: repeat(2, 1fr);
+      width: 90vw;
+      margin: 0 auto
+  }
+  }
+
+@media (min-width: 320px) {
+
 .splash-container {
       margin: 30vh auto
   }
@@ -449,7 +518,10 @@ h6 {
 
 .splash-link {
       width: 40vw;
-      margin: 2.5vh auto 0 auto
+      margin: 2.5vh auto 0 auto;
+      border: 2px solid black;
+      border-radius: 20px;
+      padding: 5px 15px 5px 15px
   }
   }
 

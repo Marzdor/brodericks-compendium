@@ -59,7 +59,7 @@ class Browse extends Component {
 
   render() {
     return (
-      <section className="container">
+      <div>
         <Filter
           filterClick={this.filterClick}
           searchClick={this.handleSearch}
@@ -70,7 +70,7 @@ class Browse extends Component {
           filteredNames={this.state.filteredNames}
           filters={this.state.filters}
         />
-      </section>
+      </div>
     );
   }
 }
