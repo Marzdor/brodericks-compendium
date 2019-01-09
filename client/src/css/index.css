@@ -368,8 +368,16 @@ button:focus {
 }
 
 a {
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
+  color: black;
+  font-weight: 600;
   text-decoration: none;
 }
+
+/* class based global */
 
 @media (min-width: 320px) {
 
@@ -399,6 +407,8 @@ a {
         padding: 20px
     }
   }
+
+/*  */
 
 a {
   background-color: transparent;

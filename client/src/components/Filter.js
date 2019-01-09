@@ -41,7 +41,6 @@ const Filter = props => {
             type="checkbox"
             id={key}
             name={key}
-            className="filter-checkbox"
           />
           <label htmlFor={key}>{filters[key]}</label>
         </div>
@@ -54,7 +53,6 @@ const Filter = props => {
             type="checkbox"
             id={key}
             name={key}
-            className="filter-checkbox"
           />
           <label htmlFor={key}>{filters[key]}</label>
         </div>
@@ -69,21 +67,21 @@ const Filter = props => {
   });
   //
   return (
-    <div className="container-filter">
+    <div>
       <datalist id="op">{options}</datalist>
       <input type="text" list="op" />
       <button onClick={props.searchClick}>Search</button>
-      <h4 className="filter-btn" id="loc" onClick={toggle}>
+      <h4 id="loc" onClick={toggle}>
         Location
       </h4>
       <section className="hide filter--loc">
-        <div className="filter-list">{locList}</div>
+        <div>{locList}</div>
       </section>
-      <h4 className="filter-btn" id="rar" onClick={toggle}>
+      <h4 id="rar" onClick={toggle}>
         Rarity
       </h4>
       <section className="hide filter--rar">
-        <div className="filter-list">{rList}</div>
+        <div>{rList}</div>
       </section>
     </div>
   );

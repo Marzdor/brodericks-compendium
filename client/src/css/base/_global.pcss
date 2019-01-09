@@ -17,9 +17,30 @@ button:focus {
   outline: none;
 }
 a {
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
+  color: black;
+  font-weight: 600;
   text-decoration: none;
 }
+div {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
 
+/* class based global */
 .hide {
   @mixin atSmall {
     display: none !important;
@@ -42,3 +63,4 @@ a {
     }
   }
 }
+/*  */
