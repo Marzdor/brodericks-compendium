@@ -377,6 +377,20 @@ a {
   text-decoration: none;
 }
 
+div {
+  display: grid;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 /* class based global */
 
 @media (min-width: 320px) {
@@ -410,51 +424,69 @@ a {
 
 /*  */
 
-a {
-  background-color: transparent;
-  border: 2px solid black;
-  border-radius: 20px;
-  padding: 5px 15px 5px 15px;
-  color: black;
-  font-weight: 600;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-
 @media (min-width: 320px) {
 
-.h-splash-title {
-        font-size: 1.5rem;
-        margin: 1vh 0
-    }
+.splash-container {
+      margin: 30vh auto
+  }
   }
 
-@media (min-width: 320px) {
+@media (min-width: 600px) {
 
-.h-splash-sub {
-        font-size: 1.125rem;
-        width: 60vw;
-        margin: 1vh 0 3vh 0
-    }
-  }
-
-div {
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  text-align: center;
-}
-
-@media (min-width: 320px) {
-
-.container-splash {
+.splash-container {
       margin: 35vh auto
   }
+  }
+
+@media (min-width: 1024px) {
+
+.splash-container {
+      grid-template-columns: repeat(2, 1fr)
+  }
+  }
+
+@media (min-width: 320px) {
+
+.splash-link {
+      width: 40vw;
+      margin: 2.5vh auto 0 auto
+  }
+  }
+
+@media (min-width: 600px) {
+
+.splash-link {
+      width: 25vw;
+      margin: 2vh auto 0 auto
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.splash-link {
+      width: 15vw
+  }
+  }
+
+@media (min-width: 2000px) {
+
+.splash-link {
+      width: 10vw
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.splash-title {
+      font-size: 4rem;
+      grid-column: 1 / span 2
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.splash-title-sub {
+        font-size: 2rem;
+        grid-column: 1 / span 2
+    }
   }

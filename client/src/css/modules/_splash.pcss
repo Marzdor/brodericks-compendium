@@ -1,0 +1,41 @@
+.splash {
+  &-container {
+    @mixin atSmall {
+      margin: 30vh auto;
+    }
+    @mixin atMedium {
+      margin: 35vh auto;
+    }
+    @mixin atLarge {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &-link {
+    @mixin atSmall {
+      width: 40vw;
+      margin: 2.5vh auto 0 auto;
+    }
+    @mixin atMedium {
+      width: 25vw;
+      margin: 2vh auto 0 auto;
+    }
+    @mixin atLarge {
+      width: 15vw;
+    }
+    @mixin atXLarge {
+      width: 10vw;
+    }
+  }
+  &-title {
+    @mixin atLarge {
+      font-size: 4rem;
+      grid-column: 1 / span 2;
+    }
+    &-sub {
+      @mixin atLarge {
+        font-size: 2rem;
+        grid-column: 1 / span 2;
+      }
+    }
+  }
+}
