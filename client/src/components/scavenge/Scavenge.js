@@ -17,12 +17,12 @@ class Scavenge extends Component {
       ]
     };
 
-    this.criteria = { rarity: "", location: this.selected.location };
-    this.foundPlant = {};
     this.selected = this.props.scavenge.selected;
     this.tableToUse = this.props.scavenge.difficultyOptions[
       this.selected.difficulty
     ];
+    this.criteria = { rarity: "", location: this.selected.location };
+    this.foundPlant = {};
 
     this.setup = this.setup.bind(this);
     this.setResult = this.setResult.bind(this);
@@ -38,6 +38,7 @@ class Scavenge extends Component {
       this.props.history.push("/scavenge/mode");
     } else {
       this.setup();
+
       this.setState({ isLoading: false });
     }
     //
@@ -74,20 +75,36 @@ class Scavenge extends Component {
       });
       // If selected location has no plants of rolled rarity cycle rarity down untill location has plants
       if (filteredPlants.length === 0) {
-        const curIndex = this.state.rarities.indexOf(this.criteria.rarity);
-        this.criteria.rarity = this.state.rarities[curIndex - 1];
+        // handle ocean fringe case
+        if (this.criteria.rarity === "Very Common") {
+          filteredPlants.push({
+            name: "None",
+            rarity: "Very Common",
+            location: this.criteria.location,
+            description:
+              this.criteria.location + " contain no Very Common plants."
+          });
+        } else {
+          const curIndex = this.state.rarities.indexOf(this.criteria.rarity);
+          this.criteria.rarity = this.state.rarities[curIndex - 1];
+        }
+        //
       }
     } while (filteredPlants.length === 0);
     //
     // Get random plant from filtered list
     let randomIndex;
-    if (filteredPlants.length === 0) {
+    if (filteredPlants.length === 1) {
       randomIndex = 0;
     } else {
       randomIndex = Math.round(Math.random() * (filteredPlants.length - 1) + 1);
     }
     this.foundPlant = filteredPlants[randomIndex];
     //
+    console.log(this.selected);
+    console.log(filteredPlants);
+    console.log(rolls);
+    console.log(this.criteria.rarity);
   }
   //
   // set rarity based on dice role
