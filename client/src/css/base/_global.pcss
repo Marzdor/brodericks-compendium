@@ -7,7 +7,8 @@ body {
   padding: 0;
   font-family: sans-serif;
   font-family: "Open Sans", sans-serif;
-  color: #08090a;
+  background-color: $cMainBackground;
+  color: #000;
 }
 
 input:focus,
@@ -54,8 +55,9 @@ h6 {
   &-main {
     & > h2 {
       @mixin atSmall {
-        background-color: #d8d8d8;
+        background-color: $cActive;
         padding: 20px;
+        border: 4px solid $cBorder;
       }
     }
   }
