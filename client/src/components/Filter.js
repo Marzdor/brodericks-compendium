@@ -35,7 +35,10 @@ const Filter = props => {
   for (let key in filters) {
     if (key[0] === "l") {
       locList.push(
-        <div className="filter-container" key={key + " : " + filters[key]}>
+        <div
+          className="filter-container-check"
+          key={key + " : " + filters[key]}
+        >
           <input
             className="filter-checkbox"
             onClick={props.filterClick}
@@ -50,7 +53,10 @@ const Filter = props => {
       );
     } else {
       rList.push(
-        <div className="filter-container" key={key + " : " + filters[key]}>
+        <div
+          className="filter-container-check"
+          key={key + " : " + filters[key]}
+        >
           <input
             className="filter-checkbox"
             onClick={props.filterClick}
@@ -73,10 +79,12 @@ const Filter = props => {
   });
   //
   return (
-    <div>
+    <div className="filter-container">
       <datalist id="op">{options}</datalist>
-      <input type="text" list="op" />
-      <button onClick={props.searchClick}>Search</button>
+      <input className="filter-search-box" type="text" list="op" />
+      <button className="filter-search-btn" onClick={props.searchClick}>
+        Search
+      </button>
       <h4 id="loc" onClick={toggle}>
         Location
       </h4>
