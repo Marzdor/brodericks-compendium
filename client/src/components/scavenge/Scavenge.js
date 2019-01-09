@@ -97,13 +97,14 @@ class Scavenge extends Component {
     if (filteredPlants.length === 1) {
       randomIndex = 0;
     } else {
-      randomIndex = Math.round(Math.random() * (filteredPlants.length - 1) + 1);
+      randomIndex = Math.floor(Math.random() * filteredPlants.length);
     }
     this.foundPlant = filteredPlants[randomIndex];
     //
     console.log(this.selected);
     console.log(filteredPlants);
     console.log(rolls);
+    console.log(randomIndex);
     console.log(this.criteria.rarity);
   }
   //
@@ -142,9 +143,22 @@ class Scavenge extends Component {
         <h3>{this.foundPlant.rarity}</h3>
         <h3>{this.foundPlant.location}</h3>
         <ReactMarkdown source={this.foundPlant.description} />
-        {/* TODO make reroll and reset links work */}
-        <Link to="/scavenge">Reroll</Link>
-        <Link to="/scavenge">Reset</Link>
+        <Link
+          onClick={() => {
+            window.location.reload();
+          }}
+          to="/"
+        >
+          Home
+        </Link>
+        <Link
+          onClick={() => {
+            window.location.reload();
+          }}
+          to="/scavenge"
+        >
+          Reset
+        </Link>
       </section>
     );
   }
