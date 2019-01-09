@@ -206,7 +206,11 @@ class App extends Component {
             exact
             path="/scavenge"
             render={props => (
-              <Scavenge {...props} scavenge={this.state.scavenge} />
+              <Scavenge
+                {...props}
+                scavenge={this.state.scavenge}
+                plants={this.state.data.plants}
+              />
             )}
           />
           <Route
