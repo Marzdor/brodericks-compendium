@@ -1,0 +1,29 @@
+.plant {
+  &-container {
+    @mixin atSmall {
+      background-color: $cSubBackground;
+      grid-template-columns: repeat(2, 45vw);
+      margin: 0 2.5vw;
+      border: 4px solid $cBorder;
+      border-top: none;
+    }
+    &-loc {
+      @mixin atSmall {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    & h4 {
+      @mixin atSmall {
+        margin: 10px 0 5px 0;
+      }
+    }
+  }
+  &-desc {
+    @mixin atSmall {
+      text-align: justify;
+      width: 85vw;
+      margin: 10px auto 0 auto;
+      grid-column: 1 / span 2;
+    }
+  }
+}

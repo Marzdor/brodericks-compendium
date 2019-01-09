@@ -99,12 +99,12 @@ const PlantsBody = props => {
     plantEle.push(
       <section key={info.name}>
         <h2 onClick={toggle}>{info.name}</h2>
-        <div className="hide">
+        <div className="plant-container hide">
           <h4>Rarity</h4>
-          <p>{info.rarity}</p>
           <h4>Locations</h4>
-          <div>{location}</div>
-          <ReactMarkdown source={info.description} />
+          <p>{info.rarity}</p>
+          <div className="plant-container-loc">{location}</div>
+          <ReactMarkdown className="plant-desc" source={info.description} />
         </div>
       </section>
     );
@@ -113,6 +113,7 @@ const PlantsBody = props => {
   const plantEle = [];
   for (let plant in dataToShow) {
     const info = dataToShow[plant];
+    // if no filter selected show all
     if (props.filteredNames.length === 0) {
       createPlant(info);
     } else if (props.filteredNames.indexOf(info.name) >= 0) {
