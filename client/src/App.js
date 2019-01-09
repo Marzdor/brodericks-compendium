@@ -98,7 +98,7 @@ class App extends Component {
             [56, 79, "Uncommon"],
             [80, 91, "Rare"],
             [92, 99, "Very Rare"],
-            [100, 100, "Very Rare or Legendary"]
+            [100, 100, "Legendary"]
           ],
           medium: [
             [1, 53, "Very Common"],
@@ -106,7 +106,7 @@ class App extends Component {
             [80, 91, "Uncommon"],
             [92, 96, "Rare"],
             [97, 99, "Very Rare"],
-            [100, 100, "Very Rare or Legendary"]
+            [100, 100, "Legendary"]
           ],
           hard: [
             [1, 55, "Very Common"],
@@ -114,7 +114,7 @@ class App extends Component {
             [82, 93, "Uncommon"],
             [94, 98, "Rare"],
             [99, 99, "Very Rare"],
-            [100, 100, "Very Rare or Legendary"]
+            [100, 100, "Legendary"]
           ]
         },
         locations: [

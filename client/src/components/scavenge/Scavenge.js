@@ -6,15 +6,23 @@ class Scavenge extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true
+      isLoading: true,
+      rarities: [
+        "Very Common",
+        "Common",
+        "Uncommon",
+        "Rare",
+        "Very Rare",
+        "Legendary"
+      ]
     };
 
+    this.criteria = { rarity: "", location: this.selected.location };
+    this.foundPlant = {};
     this.selected = this.props.scavenge.selected;
     this.tableToUse = this.props.scavenge.difficultyOptions[
       this.selected.difficulty
     ];
-    this.criteria = { rarity: "", location: this.selected.location };
-    this.foundPlant = {};
 
     this.setup = this.setup.bind(this);
     this.setResult = this.setResult.bind(this);
@@ -30,7 +38,6 @@ class Scavenge extends Component {
       this.props.history.push("/scavenge/mode");
     } else {
       this.setup();
-
       this.setState({ isLoading: false });
     }
     //
@@ -56,14 +63,21 @@ class Scavenge extends Component {
     //
     // Filter Plants based on Criteria
     const filteredPlants = [];
-    this.props.plants.forEach(plant => {
-      if (
-        plant.rarity === this.criteria.rarity &&
-        plant.location.indexOf(this.criteria.location) >= 0
-      ) {
-        filteredPlants.push(plant);
+    do {
+      this.props.plants.forEach(plant => {
+        if (
+          plant.rarity === this.criteria.rarity &&
+          plant.location.indexOf(this.criteria.location) >= 0
+        ) {
+          filteredPlants.push(plant);
+        }
+      });
+      // If selected location has no plants of rolled rarity cycle rarity down untill location has plants
+      if (filteredPlants.length === 0) {
+        const curIndex = this.state.rarities.indexOf(this.criteria.rarity);
+        this.criteria.rarity = this.state.rarities[curIndex - 1];
       }
-    });
+    } while (filteredPlants.length === 0);
     //
     // Get random plant from filtered list
     let randomIndex;
@@ -74,11 +88,6 @@ class Scavenge extends Component {
     }
     this.foundPlant = filteredPlants[randomIndex];
     //
-    console.log(this.selected);
-    console.log(filteredPlants);
-    console.log(rolls);
-    console.log(this.criteria.rarity);
-    // TODO handle errors
   }
   //
   // set rarity based on dice role
