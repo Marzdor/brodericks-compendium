@@ -10,9 +10,11 @@ const PlantsBody = props => {
     targets.parMain.classList.toggle("active-main");
     if (targets.parPrev) {
       targets.parPrev.classList.toggle("active");
+      targets.parPrev.classList.toggle("active-sub");
     }
     if (targets.parNext) {
       targets.parNext.classList.toggle("active");
+      targets.parNext.classList.toggle("active-sub");
     }
     prevTargets = targets;
   }
@@ -34,6 +36,10 @@ const PlantsBody = props => {
       if (prevTargets.main.innerHTML !== targets.main.innerHTML) {
         document.querySelectorAll(".active").forEach(ele => {
           ele.classList.toggle("active");
+          ele.classList.toggle("active-sub");
+        });
+        document.querySelectorAll(".active-sub").forEach(ele => {
+          ele.classList.toggle("active-sub");
         });
         document.querySelectorAll(".active-main").forEach(ele => {
           ele.classList.toggle("active-main");

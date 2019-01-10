@@ -86,23 +86,25 @@
   &--loc {
     @mixin atSmall {
       grid-template-columns: repeat(2, 1fr);
-      width: 90vw;
-      margin: 0 auto;
       grid-column: 1 / span 2;
+      width: 95%;
+      margin: 0 auto;
     }
     @mixin atMedium {
       grid-template-columns: repeat(3, 1fr);
+      grid-column: 1 / span 4d;
     }
   }
   &--rar {
     @mixin atSmall {
       grid-template-columns: repeat(2, 1fr);
-      width: 90vw;
-      margin: 0 auto;
       grid-column: 1 / span 2;
+      width: 95%;
+      margin: 0 auto;
     }
     @mixin atMedium {
       grid-template-columns: repeat(3, 1fr);
+      grid-column: 1 / span 4d;
     }
   }
 }
@@ -115,7 +117,7 @@
     height: 35px;
     width: 100px;
     margin: 8px auto;
-    line-height: 1.6;
+    line-height: 1.9;
   }
   @mixin atMedium {
     grid-row: 1;
@@ -133,7 +135,7 @@
     height: 35px;
     width: 100px;
     margin: 8px auto;
-    line-height: 1.6;
+    line-height: 1.9;
   }
   @mixin atMedium {
     grid-row: 1;

@@ -7,6 +7,11 @@
       grid-template-columns: repeat(2, 1fr);
       margin: 20px;
     }
+    @mixin atLarge {
+      grid-template-columns: repeat(3, 1fr);
+      width: 80%;
+      margin: 20px auto;
+    }
     &-sub {
       @mixin atSmall {
         background-color: $cSubBackground;
