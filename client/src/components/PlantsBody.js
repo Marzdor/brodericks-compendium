@@ -99,7 +99,7 @@ const PlantsBody = props => {
     plantEle.push(
       <section key={info.name}>
         <h2 onClick={toggle}>{info.name}</h2>
-        <div className="plant-container hide">
+        <div className="plant-container-sub hide">
           <h4>Rarity</h4>
           <h4>Locations</h4>
           <p>{info.rarity}</p>
@@ -122,7 +122,7 @@ const PlantsBody = props => {
   }
   //
 
-  return <div>{plantEle}</div>;
+  return <div className="plant-container">{plantEle}</div>;
 };
 
 export default PlantsBody;

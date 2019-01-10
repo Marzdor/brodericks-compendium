@@ -3,6 +3,11 @@
     @mixin atSmall {
       grid-template-columns: repeat(2, 1fr);
     }
+    @mixin atMedium {
+      grid-template-columns: auto repeat(3, 1fr);
+      width: 95%;
+      margin: 0 auto;
+    }
     &-check {
       @mixin atSmall {
         grid-template-columns: auto 1fr;
@@ -56,15 +61,25 @@
         width: 250px;
         margin: 10px auto 0 auto;
       }
+      @mixin atMedium {
+        grid-column: 1 / span 1;
+        margin: auto;
+      }
     }
     &-btn {
       @mixin atSmall {
         grid-column: 1 / span 2;
-        border: 4px solid $cBorder;
+        border: 3px solid $cBorder;
         background-color: $cSubBackground;
         height: 35px;
         width: 80px;
         margin: 8px auto;
+      }
+      @mixin atMedium {
+        grid-column: 2 / span 1;
+        height: 35px;
+        width: 90%;
+        margin: auto;
       }
     }
   }
@@ -75,6 +90,9 @@
       margin: 0 auto;
       grid-column: 1 / span 2;
     }
+    @mixin atMedium {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
   &--rar {
     @mixin atSmall {
@@ -83,17 +101,44 @@
       margin: 0 auto;
       grid-column: 1 / span 2;
     }
+    @mixin atMedium {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 
 #loc {
   @mixin atSmall {
     grid-row: 3;
+    border: 3px solid $cBorder;
+    background-color: $cSubBackground;
+    height: 35px;
+    width: 100px;
+    margin: 8px auto;
+    line-height: 1.6;
+  }
+  @mixin atMedium {
+    grid-row: 1;
+    grid-column: 3;
+    width: 90%;
+    padding: 1px 6px;
   }
 }
 
 #rar {
   @mixin atSmall {
     grid-row: 3;
+    border: 3px solid $cBorder;
+    background-color: $cSubBackground;
+    height: 35px;
+    width: 100px;
+    margin: 8px auto;
+    line-height: 1.6;
+  }
+  @mixin atMedium {
+    grid-row: 1;
+    grid-column: 4;
+    width: 90%;
+    padding: 1px 6px;
   }
 }

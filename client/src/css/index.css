@@ -433,6 +433,15 @@ p {
   }
   }
 
+@media (min-width: 600px) {
+
+.filter-container {
+      grid-template-columns: auto repeat(3, 1fr);
+      width: 95%;
+      margin: 0 auto
+  }
+  }
+
 @media (min-width: 320px) {
 
 .filter-container-check {
@@ -497,15 +506,33 @@ p {
     }
   }
 
+@media (min-width: 600px) {
+
+.filter-search-box {
+        grid-column: 1 / span 1;
+        margin: auto
+    }
+  }
+
 @media (min-width: 320px) {
 
 .filter-search-btn {
         grid-column: 1 / span 2;
-        border: 4px solid #464942;
+        border: 3px solid #464942;
         background-color: #f1f4f3;
         height: 35px;
         width: 80px;
         margin: 8px auto
+    }
+  }
+
+@media (min-width: 600px) {
+
+.filter-search-btn {
+        grid-column: 2 / span 1;
+        height: 35px;
+        width: 90%;
+        margin: auto
     }
   }
 
@@ -519,6 +546,13 @@ p {
   }
   }
 
+@media (min-width: 600px) {
+
+.filter--loc {
+      grid-template-columns: repeat(3, 1fr)
+  }
+  }
+
 @media (min-width: 320px) {
 
 .filter--rar {
@@ -529,29 +563,90 @@ p {
   }
   }
 
+@media (min-width: 600px) {
+
+.filter--rar {
+      grid-template-columns: repeat(3, 1fr)
+  }
+  }
+
 @media (min-width: 320px) {
 
 #loc {
-    grid-row: 3
+    grid-row: 3;
+    border: 3px solid #464942;
+    background-color: #f1f4f3;
+    height: 35px;
+    width: 100px;
+    margin: 8px auto;
+    line-height: 1.6
+}
+  }
+
+@media (min-width: 600px) {
+
+#loc {
+    grid-row: 1;
+    grid-column: 3;
+    width: 90%;
+    padding: 1px 6px
 }
   }
 
 @media (min-width: 320px) {
 
 #rar {
-    grid-row: 3
+    grid-row: 3;
+    border: 3px solid #464942;
+    background-color: #f1f4f3;
+    height: 35px;
+    width: 100px;
+    margin: 8px auto;
+    line-height: 1.6
+}
+  }
+
+@media (min-width: 600px) {
+
+#rar {
+    grid-row: 1;
+    grid-column: 4;
+    width: 90%;
+    padding: 1px 6px
 }
   }
 
 @media (min-width: 320px) {
 
 .plant-container {
-      background-color: #f1f4f3;
-      grid-template-columns: repeat(2, 45vw);
-      margin: 0 2.5vw;
-      border: 4px solid #464942;
-      border-top: none
+      margin: 20px 0 0 0
   }
+  }
+
+@media (min-width: 600px) {
+
+.plant-container {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 20px
+  }
+  }
+
+@media (min-width: 320px) {
+
+.plant-container-sub {
+        background-color: #f1f4f3;
+        grid-template-columns: repeat(2, 1fr);
+        border: 4px solid #464942;
+        border-top: none
+    }
+  }
+
+@media (min-width: 600px) {
+
+.plant-container-sub {
+        width: 95%;
+        margin: 0 auto
+    }
   }
 
 @media (min-width: 320px) {
@@ -572,8 +667,8 @@ p {
 
 .plant-desc {
       text-align: justify;
-      width: 85vw;
-      margin: 10px auto 0 auto;
+      width: 90%;
+      margin: 20px auto;
       grid-column: 1 / span 2
   }
   }
