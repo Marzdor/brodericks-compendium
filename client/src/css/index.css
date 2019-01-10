@@ -568,7 +568,14 @@ p {
 
 .filter--loc {
       grid-template-columns: repeat(3, 1fr);
-      grid-column: 1 / span 4d
+      grid-column: 1 / span 4
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.filter--loc {
+      grid-template-columns: repeat(4, 1fr)
   }
   }
 
@@ -586,7 +593,14 @@ p {
 
 .filter--rar {
       grid-template-columns: repeat(3, 1fr);
-      grid-column: 1 / span 4d
+      grid-column: 1 / span 4
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.filter--rar {
+      grid-template-columns: repeat(4, 1fr)
   }
   }
 

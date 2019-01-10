@@ -15,7 +15,7 @@ class Browse extends Component {
         lfo: [false, "Forests"],
         lju: [false, "Jungles"],
         lmo: [false, "Mountains"],
-        loc: [false, "Oceans"],
+        loce: [false, "Oceans"],
         lpl: [false, "Plains"],
         lri: [false, "Rivers"],
         lsw: [false, "Swamps"],

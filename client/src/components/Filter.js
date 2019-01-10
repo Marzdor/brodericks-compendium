@@ -9,7 +9,7 @@ const Filter = props => {
     lfo: "Forests",
     lju: "Jungles",
     lmo: "Mountains",
-    loc: "Oceans",
+    loce: "Oceans",
     lpl: "Plains",
     lri: "Rivers",
     lsw: "Swamps",
