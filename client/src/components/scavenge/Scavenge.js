@@ -136,29 +136,48 @@ class Scavenge extends Component {
     this.criteria.rarity = result;
   }
   //
+
   render() {
+    // Create Location Elements
+    const location = [];
+    console.log(this.foundPlant.location);
+    if (!this.state.isLoading) {
+      this.foundPlant.location.forEach(el => {
+        location.push(<p key={el}>{el}</p>);
+      });
+    }
+    //
     return (
-      <section>
-        <h2>{this.foundPlant.name}</h2>
-        <h3>{this.foundPlant.rarity}</h3>
-        <h3>{this.foundPlant.location}</h3>
-        <ReactMarkdown source={this.foundPlant.description} />
-        <Link
-          onClick={() => {
-            window.location.reload();
-          }}
-          to="/"
-        >
-          Home
-        </Link>
-        <Link
-          onClick={() => {
-            window.location.reload();
-          }}
-          to="/scavenge"
-        >
-          Reset
-        </Link>
+      <section className="scavenge-container">
+        <h2 className="active-found">{this.foundPlant.name}</h2>
+        <div className="plant-container-sub">
+          <h3>{this.foundPlant.rarity}</h3>
+          <h3 className="plant-container-loc">{location}</h3>
+          <ReactMarkdown
+            className="plant-desc"
+            source={this.foundPlant.description}
+          />
+        </div>
+        <div className="scavenge-container-sub">
+          <Link
+            className="scavenge-link"
+            onClick={() => {
+              window.location.reload();
+            }}
+            to="/"
+          >
+            Home
+          </Link>
+          <Link
+            className="scavenge-link"
+            onClick={() => {
+              window.location.reload();
+            }}
+            to="/scavenge"
+          >
+            Reset
+          </Link>
+        </div>
       </section>
     );
   }

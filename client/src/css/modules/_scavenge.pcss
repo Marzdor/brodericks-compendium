@@ -1,0 +1,108 @@
+.scavenge {
+  &-container {
+    @mixin atMedium {
+      width: 90%;
+      margin: 20px auto;
+    }
+    @mixin atLarge {
+      width: 60%;
+      margin: 20px auto;
+    }
+    &-sub {
+      @mixin atSmall {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @mixin atMedium {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+    &-diff {
+      @mixin atLarge {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      & h1 {
+        @mixin atLarge {
+          grid-column: 1 / span 3;
+        }
+      }
+      &-sub {
+        @mixin atSmall {
+          padding: 0 0 10px 0;
+          border: 4px solid $cBorder;
+          border-bottom: none;
+        }
+        @mixin atMedium {
+          width: 60%;
+          margin: 0 auto 10px auto;
+          border-bottom: 4px solid $cBorder;
+        }
+        @mixin atLarge {
+          min-width: 80%;
+          max-width: 85%;
+          margin: 20px auto;
+        }
+      }
+    }
+    &-loc {
+      @mixin atSmall {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @mixin atLarge {
+        grid-template-columns: repeat(4, 1fr);
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+    &-mode {
+      @mixin atMedium {
+        width: 40%;
+        margin: 0 auto;
+      }
+      @mixin atLarge {
+        width: 20%;
+        margin: 0 auto;
+      }
+    }
+    &-table {
+      @mixin atSmall {
+        background-color: $cSubBackground;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: left;
+        margin: 0 auto;
+        border: 3px solid $cBorder;
+        padding: 5px;
+      }
+      & p {
+        @mixin atSmall {
+          border-bottom: 2px solid $cBorder;
+          padding: 2.5px;
+        }
+      }
+    }
+  }
+  &-desc {
+    @mixin atSmall {
+      margin: 10px auto 0 auto;
+      text-align: justify;
+      width: 90%;
+    }
+  }
+  &-link {
+    @mixin atSmall {
+      width: 95%;
+      margin: 2.5vh auto 0 auto;
+      border: 4px solid $cBorder;
+      padding: 5px 15px 5px 15px;
+      background-color: $cSubBackground;
+    }
+    @mixin atMedium {
+      min-width: 80%;
+      max-width: 85%;
+    }
+    @mixin atLarge {
+      min-width: 80%;
+      max-width: 80%;
+    }
+  }
+}

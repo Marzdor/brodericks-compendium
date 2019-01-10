@@ -3,14 +3,26 @@ import { Link } from "react-router-dom";
 
 const Mode = props => {
   return (
-    <div>
-      <Link to="/scavenge" onClick={props.modeClicked}>
+    <div className="scavenge-container-mode">
+      <Link
+        className="scavenge-link"
+        to="/scavenge"
+        onClick={props.modeClicked}
+      >
         Advantage
       </Link>
-      <Link to="/scavenge" onClick={props.modeClicked}>
+      <Link
+        className="scavenge-link"
+        to="/scavenge"
+        onClick={props.modeClicked}
+      >
         Normal
       </Link>
-      <Link to="/scavenge" onClick={props.modeClicked}>
+      <Link
+        className="scavenge-link"
+        to="/scavenge"
+        onClick={props.modeClicked}
+      >
         Disadvantage
       </Link>
     </div>

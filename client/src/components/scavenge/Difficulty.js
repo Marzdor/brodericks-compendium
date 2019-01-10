@@ -6,7 +6,7 @@ const Difficulty = props => {
   const tables = [];
   for (let key in props.tableData) {
     tables.push(
-      <div key={key}>
+      <div className="scavenge-container-table" key={key}>
         <p>{props.tableData[key][0][0] + " - " + props.tableData[key][0][1]}</p>
         <p>{props.tableData[key][0][2]}</p>
         <p>{props.tableData[key][1][0] + " - " + props.tableData[key][1][1]}</p>
@@ -28,37 +28,46 @@ const Difficulty = props => {
   for (let key in props.tableData) {
     roll.push(
       <div key={"roll-" + key}>
-        <Link id={key} onClick={props.diffClicked} to="/scavenge">
+        <Link
+          className="scavenge-link"
+          id={key}
+          onClick={props.diffClicked}
+          to="/scavenge"
+        >
           Select
         </Link>
       </div>
     );
   }
   return (
-    <section>
+    <div className="scavenge-container-diff">
       <h1>Difficulty Selection</h1>
-      <div>
+      <div className="scavenge-container-diff-sub">
         <h2>Easy</h2>
         {tables[0]}
-        <p>Based on the number of plants on the list. Much more lenient.</p>
+        <p className="scavenge-desc">
+          Based on the number of plants on the list. Much more lenient.
+        </p>
         {roll[0]}
       </div>
-      <div>
+      <div className="scavenge-container-diff-sub">
         <h2>Medium</h2>
         {tables[1]}
-        <p>More logarithmic. Slightly harder to do better on.</p>
+        <p className="scavenge-desc">
+          More logarithmic. Slightly harder to do better on.
+        </p>
         {roll[1]}
       </div>
-      <div>
+      <div className="scavenge-container-diff-sub">
         <h2>Hard</h2>
         {tables[2]}
-        <p>
+        <p className="scavenge-desc">
           Very logarithmic. The actual result for legendary is a 0.38% success
           rate, so it’s pretty hard to do well.
         </p>
         {roll[2]}
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -6,12 +6,17 @@ const Location = props => {
   const locations = [];
   props.locations.forEach(loc => {
     locations.push(
-      <Link to="/scavenge" onClick={props.locClicked} key={"op-loc: " + loc}>
+      <Link
+        className="scavenge-link"
+        to="/scavenge"
+        onClick={props.locClicked}
+        key={"op-loc: " + loc}
+      >
         {loc}
       </Link>
     );
   });
-  return <div>{locations}</div>;
+  return <div className="scavenge-container-loc">{locations}</div>;
 };
 
 export default Location;
