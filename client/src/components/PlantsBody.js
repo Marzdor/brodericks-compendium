@@ -103,7 +103,7 @@ const PlantsBody = props => {
       location.push(<p key={el}>{el}</p>);
     });
     plantEle.push(
-      <section key={info.name}>
+      <section className="plant" key={info.name}>
         <h2 onClick={toggle}>{info.name}</h2>
         <div className="plant-container-sub hide">
           <h4>Rarity</h4>
