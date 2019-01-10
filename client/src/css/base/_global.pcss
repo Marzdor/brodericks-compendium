@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  user-select: none;
 }
 
 body {
@@ -7,7 +8,8 @@ body {
   padding: 0;
   font-family: sans-serif;
   font-family: "Open Sans", sans-serif;
-  color: #08090a;
+  background-color: $cMainBackground;
+  color: #000;
 }
 
 input:focus,
@@ -16,10 +18,29 @@ textarea:focus,
 button:focus {
   outline: none;
 }
-a {
+a,
+button {
+  background-color: transparent;
+  color: black;
+  font-weight: 600;
   text-decoration: none;
+  border: none;
+}
+div {
+  display: grid;
+  text-align: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
+/* class based global */
 .hide {
   @mixin atSmall {
     display: none !important;
@@ -33,12 +54,33 @@ a {
   @mixin atLarge {
     grid-column: 1 / span 3;
   }
+  &-found {
+    @mixin atSmall {
+      background-color: $cActive;
+      padding: 20px;
+      border: 4px solid $cBorder;
+    }
+  }
   &-main {
     & > h2 {
       @mixin atSmall {
-        background-color: #d8d8d8;
+        background-color: $cActive;
         padding: 20px;
+        border: 4px solid $cBorder;
       }
     }
   }
+  &-sub {
+    @mixin atSmall {
+      background-color: $cActive;
+      padding: 5px;
+      border: 4px solid $cBorder;
+      margin: 10px 0;
+    }
+    @mixin atMedium {
+      width: 50%;
+      margin: 15px auto;
+    }
+  }
 }
+/*  */

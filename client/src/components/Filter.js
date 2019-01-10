@@ -9,7 +9,7 @@ const Filter = props => {
     lfo: "Forests",
     lju: "Jungles",
     lmo: "Mountains",
-    loc: "Oceans",
+    loce: "Oceans",
     lpl: "Plains",
     lri: "Rivers",
     lsw: "Swamps",
@@ -35,48 +35,64 @@ const Filter = props => {
   for (let key in filters) {
     if (key[0] === "l") {
       locList.push(
-        <div key={key + " : " + filters[key]}>
+        <div
+          className="filter-container-check"
+          key={key + " : " + filters[key]}
+        >
           <input
+            className="filter-checkbox"
             onClick={props.filterClick}
             type="checkbox"
             id={key}
             name={key}
-            className="filter-checkbox"
           />
-          <label htmlFor={key}>{filters[key]}</label>
+          <label className="filter-checkbox-label" htmlFor={key}>
+            {filters[key]}
+          </label>
         </div>
       );
     } else {
       rList.push(
-        <div key={key + " : " + filters[key]}>
+        <div
+          className="filter-container-check"
+          key={key + " : " + filters[key]}
+        >
           <input
+            className="filter-checkbox"
             onClick={props.filterClick}
             type="checkbox"
             id={key}
             name={key}
-            className="filter-checkbox"
           />
-          <label htmlFor={key}>{filters[key]}</label>
+          <label className="filter-checkbox-label" htmlFor={key}>
+            {filters[key]}
+          </label>
         </div>
       );
     }
   }
   //
-
+  // create options for dropdown element
+  const options = [];
+  props.plantNames.forEach(plant => {
+    options.push(<option key={"op: " + plant} value={plant} />);
+  });
+  //
   return (
-    <div className="container-filter">
-      <h4 className="filter-btn" id="loc" onClick={toggle}>
+    <div className="filter-container">
+      <datalist id="op">{options}</datalist>
+      <input className="filter-search-box" type="text" list="op" />
+      <button className="filter-search-btn" onClick={props.searchClick}>
+        Search
+      </button>
+      <h4 id="loc" onClick={toggle}>
         Location
       </h4>
-      <section className="hide filter--loc">
-        <div className="filter-list">{locList}</div>
-      </section>
-      <h4 className="filter-btn" id="rar" onClick={toggle}>
+      <div className="hide filter--loc">{locList}</div>
+      <h4 id="rar" onClick={toggle}>
         Rarity
       </h4>
-      <section className="hide filter--rar">
-        <div className="filter-list">{rList}</div>
-      </section>
+      <div className="hide filter--rar">{rList}</div>
     </div>
   );
 };

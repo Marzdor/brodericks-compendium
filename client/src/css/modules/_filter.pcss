@@ -1,36 +1,155 @@
 .filter {
-  &-checkbox {
+  &-container {
     @mixin atSmall {
-      margin: 5px 10px 0 0;
+      grid-template-columns: repeat(2, 1fr);
     }
-    @mixin atSmall {
-      margin: 5px 10px 0 10px;
+    @mixin atMedium {
+      grid-template-columns: auto repeat(3, 1fr);
+      width: 95%;
+      margin: 0 auto;
+    }
+    &-check {
+      @mixin atSmall {
+        grid-template-columns: auto 1fr;
+      }
     }
   }
-  &-btn {
+  &-checkbox {
     @mixin atSmall {
-      margin: 20px 0 5px 0;
-      cursor: pointer;
+      display: none;
+    }
+    &:checked + label:before,
+    label:hover:before {
+      @mixin atSmall {
+        content: "\2718";
+        color: #000000;
+        text-align: center;
+        line-height: 16px;
+      }
+    }
+    &-label {
+      @mixin atSmall {
+        display: inline-block;
+        position: relative;
+        padding-left: 25px;
+        font-size: 1rem;
+        line-height: 20px;
+        margin: 1vh auto 0 auto;
+      }
+      &:before {
+        @mixin atSmall {
+          line-height: 20px;
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          left: 0;
+          background-color: $cSubBackground;
+          border: 2px solid $cBorder;
+        }
+      }
+    }
+  }
+  &-search {
+    &-box {
+      @mixin atSmall {
+        grid-column: 1 / span 2;
+        border: 3px solid $cBorder;
+        background-color: $cSubBackground;
+        height: 35px;
+        width: 250px;
+        margin: 10px auto 0 auto;
+      }
+      @mixin atMedium {
+        grid-column: 1 / span 1;
+        margin: auto;
+      }
+    }
+    &-btn {
+      @mixin atSmall {
+        grid-column: 1 / span 2;
+        border: 3px solid $cBorder;
+        background-color: $cSubBackground;
+        height: 35px;
+        width: 80px;
+        margin: 8px auto;
+        cursor: pointer;
+      }
+      @mixin atMedium {
+        grid-column: 2 / span 1;
+        height: 35px;
+        width: 90%;
+        margin: auto;
+      }
     }
   }
   &--loc {
     @mixin atSmall {
-      grid-column: 1;
-      grid-row: 2;
-      justify-self: center;
-    }
-  }
-  &-list {
-    @mixin atMedium {
-      display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-column: 1 / span 2;
+      width: 95%;
+      margin: 0 auto;
+    }
+    @mixin atMedium {
+      grid-template-columns: repeat(3, 1fr);
+      grid-column: 1 / span 4;
+    }
+    @mixin atLarge {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
   &--rar {
     @mixin atSmall {
-      grid-column: 2;
-      grid-row: 2;
-      justify-self: center;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column: 1 / span 2;
+      width: 95%;
+      margin: 0 auto;
     }
+    @mixin atMedium {
+      grid-template-columns: repeat(3, 1fr);
+      grid-column: 1 / span 4;
+    }
+    @mixin atLarge {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+#loc {
+  @mixin atSmall {
+    grid-row: 3;
+    border: 3px solid $cBorder;
+    background-color: $cSubBackground;
+    height: 35px;
+    width: 100px;
+    margin: 8px auto;
+    line-height: 1.9;
+    cursor: pointer;
+  }
+  @mixin atMedium {
+    grid-row: 1;
+    grid-column: 3;
+    width: 90%;
+    padding: 1px 6px;
+  }
+}
+
+#rar {
+  @mixin atSmall {
+    grid-row: 3;
+    border: 3px solid $cBorder;
+    background-color: $cSubBackground;
+    height: 35px;
+    width: 100px;
+    margin: 8px auto;
+    line-height: 1.9;
+    cursor: pointer;
+  }
+  @mixin atMedium {
+    grid-row: 1;
+    grid-column: 4;
+    width: 90%;
+    padding: 1px 6px;
   }
 }

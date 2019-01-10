@@ -49,15 +49,32 @@ class Edit extends Component {
         console.log("target name : " + e.target.name + " not found");
     }
   }
+
   render() {
+    // create options for dropdown element
+    const options = [];
+    this.props.names.forEach(plant => {
+      options.push(<option key={"op: " + plant} value={plant} />);
+    });
+    //
+
     return (
-      <div>
-        <input id="search" autoComplete="off" placeholder="Enter Plant Name" />
-        <button onClick={this.search}>Search</button>
+      <div className="edit-container">
+        <datalist id="op">{options}</datalist>
+        <input
+          id="search"
+          autoComplete="off"
+          list="op"
+          placeholder="Enter Plant Name"
+          className="edit-search"
+        />
+        <button className="edit-btn" onClick={this.search}>
+          Search
+        </button>
         <form
           action={"/api/plants/edit=" + this.state.id}
           method="post"
-          className="container-edit"
+          className="edit-container-form"
         >
           <label>Name</label>
           <input
@@ -67,6 +84,7 @@ class Edit extends Component {
             placeholder="Plant Name"
             onChange={this.handleChange}
             autoComplete="off"
+            className="edit-search"
           />
           <label>Rarity</label>
           <input
@@ -76,6 +94,7 @@ class Edit extends Component {
             placeholder="Plant Rarity"
             onChange={this.handleChange}
             autoComplete="off"
+            className="edit-search"
           />
           <label>Location</label>
           <input
@@ -85,6 +104,7 @@ class Edit extends Component {
             placeholder="Plant Location"
             onChange={this.handleChange}
             autoComplete="off"
+            className="edit-search"
           />
           <label>Description</label>
           <textarea
@@ -95,9 +115,9 @@ class Edit extends Component {
             autoComplete="off"
             className="edit-desc"
           />
-          <input type="submit" value="Update" className="edit-btn" />
+          <input type="submit" value="Update" className="edit-btn-update" />
         </form>
-        <div id="divreview">
+        <div className="edit-container-preview">
           <ReactMarkdown source={this.state.description} />
         </div>
       </div>

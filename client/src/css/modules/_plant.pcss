@@ -1,32 +1,50 @@
 .plant {
   @mixin atSmall {
-    text-align: center;
+    cursor: pointer;
+    margin: 5px;
+  }
+  &-container {
+    @mixin atSmall {
+      margin: 20px 0 0 0;
+    }
+    @mixin atMedium {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 20px;
+    }
+    @mixin atLarge {
+      grid-template-columns: repeat(3, 1fr);
+      width: 80%;
+      margin: 20px auto;
+    }
+    &-sub {
+      @mixin atSmall {
+        background-color: $cSubBackground;
+        grid-template-columns: repeat(2, 1fr);
+        border: 4px solid $cBorder;
+        border-top: none;
+      }
+      @mixin atMedium {
+        width: 95%;
+        margin: 0 auto;
+      }
+    }
+    &-loc {
+      @mixin atSmall {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    & h4 {
+      @mixin atSmall {
+        margin: 10px 0 5px 0;
+      }
+    }
   }
   &-desc {
     @mixin atSmall {
       text-align: justify;
-      width: 95%;
-      margin: 0 auto;
+      width: 90%;
+      margin: 20px auto;
       grid-column: 1 / span 2;
-      line-height: 1.5;
-    }
-  }
-  &-name {
-    @mixin atSmall {
-      text-align: center;
-      border: 3px solid black;
-      padding: 10px;
-      margin: 0;
-      cursor: pointer;
-      height: 100%;
-    }
-  }
-  &-title {
-    &-loc {
-      @mixin atSmall {
-        grid-column: 2;
-        grid-row: 1;
-      }
     }
   }
 }
