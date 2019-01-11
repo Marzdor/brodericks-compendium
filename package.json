@@ -1,7 +1,7 @@
 {
   "name": "brodericks-compendium",
   "version": "1.0.0",
-  "description": "",
+  "description": "Broderick's Compendium: Plants and Fungi Across the Realm (version 2.0)",
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
