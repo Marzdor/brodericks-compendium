@@ -7,14 +7,14 @@ import {
 } from "react-router-dom";
 
 // Components
-import Browse from "./components/Browse";
-import Edit from "./components/Edit";
-import Error from "./components/Error";
-import Scavenge from "./components/scavenge/Scavenge";
-import ScavengeDiff from "./components/scavenge/Difficulty";
-import ScavengeLoc from "./components/scavenge/Location";
-import ScavengeMode from "./components/scavenge/Mode";
-import Splash from "./components/Splash";
+import Browse from "./assests/components/Browse";
+import Edit from "./assests/components/Edit";
+import Error from "./assests/components/Error";
+import Scavenge from "./assests/components/scavenge/Scavenge";
+import ScavengeDiff from "./assests/components/scavenge/Difficulty";
+import ScavengeLoc from "./assests/components/scavenge/Location";
+import ScavengeMode from "./assests/components/scavenge/Mode";
+import Splash from "./assests/components/Splash";
 
 // Private Route Logic
 const auth = {

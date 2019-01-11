@@ -78,8 +78,10 @@ p {
       margin: 10px 0;
     }
     @mixin atMedium {
-      width: 50%;
-      margin: 15px auto;
+      grid-column: 1 / span 2;
+    }
+    @mixin atLarge {
+      grid-column: 1 / span 3;
     }
   }
 }

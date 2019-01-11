@@ -447,8 +447,14 @@ p {
 @media (min-width: 600px) {
 
 .active-sub {
-      width: 50%;
-      margin: 15px auto
+      grid-column: 1 / span 2
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.active-sub {
+      grid-column: 1 / span 3
   }
   }
 

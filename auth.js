@@ -4,7 +4,7 @@ let admins = {};
 if (process.env.NODE_ENV === "production") {
   admins[process.env.user] = { password: process.env.pass };
 } else {
-  admins = require("./config/key").admins;
+  admins = require("./config/keys").admins;
 }
 
 module.exports = function(request, response, next) {

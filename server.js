@@ -17,7 +17,7 @@ let db;
 if (process.env.NODE_ENV === "production") {
   db = process.env.mongodb;
 } else {
-  db = require("./config/key").mongoURI;
+  db = require("./config/keys").mongoURI;
 }
 
 // Connect to Mongo
