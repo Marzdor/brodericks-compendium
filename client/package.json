@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://broderick-compendium.herokuapp.com/",
   "dependencies": {
     "history": "^4.7.2",
     "normalize.css": "^8.0.1",
