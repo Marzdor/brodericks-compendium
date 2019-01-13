@@ -41,7 +41,7 @@ const Difficulty = props => {
   }
   return (
     <div className="scavenge-container-diff">
-      <h1>Difficulty Selection</h1>
+      <h1>Please Select Your Difficulty</h1>
       <div className="scavenge-container-diff-sub">
         <h2>Easy</h2>
         {tables[0]}

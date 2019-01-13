@@ -149,6 +149,18 @@ class Scavenge extends Component {
     //
     return (
       <section className="scavenge-container">
+        <h1>Here Is The Plant You Rolled</h1>
+        <div className="scavenge-container-options">
+          <h4>Your Location: {this.criteria.location}</h4>
+          <h4>
+            Your Difficulty:{" "}
+            {this.selected.difficulty.charAt(0).toUpperCase() +
+              this.selected.difficulty.slice(1)}
+          </h4>
+          <h4>Your Mode: {this.selected.mode}</h4>
+          <h5>First Roll: {this.selected.rolls.first}</h5>
+          <h5>Second Roll: {this.selected.rolls.second}</h5>
+        </div>
         <h2 className="active-found">{this.foundPlant.name}</h2>
         <div className="plant-container-sub">
           <h3>{this.foundPlant.rarity}</h3>
@@ -159,6 +171,16 @@ class Scavenge extends Component {
           />
         </div>
         <div className="scavenge-container-sub">
+          <p className="scavenge-desc-info">
+            Advantage we take the higher roll | Disadvantage we take the lower |
+            Normal we take the first.
+          </p>
+          <br />
+          <p className="scavenge-desc-info">
+            If for example you roll a Rare and there are no Rare Plants for the
+            location you have chosen then in bumps you down 1 rarity untill a
+            plant is found.
+          </p>
           <Link
             className="scavenge-link"
             onClick={() => {

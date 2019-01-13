@@ -16,7 +16,12 @@ const Location = props => {
       </Link>
     );
   });
-  return <div className="scavenge-container-loc">{locations}</div>;
+  return (
+    <div className="scavenge-container-loc">
+      <h1>Please Select Your Location</h1>
+      {locations}
+    </div>
+  );
 };
 
 export default Location;

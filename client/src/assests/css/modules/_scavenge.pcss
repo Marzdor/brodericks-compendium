@@ -22,6 +22,9 @@
         grid-template-columns: repeat(3, 1fr);
       }
       & h1 {
+        @mixin atSmall {
+          margin-top: 20px;
+        }
         @mixin atLarge {
           grid-column: 1 / span 3;
         }
@@ -53,6 +56,15 @@
         width: 80%;
         margin: 0 auto;
       }
+      & h1 {
+        @mixin atSmall {
+          margin-top: 20px;
+          grid-column: 1 / span 2;
+        }
+        @mixin atLarge {
+          grid-column: 1 / span 4;
+        }
+      }
     }
     &-mode {
       @mixin atMedium {
@@ -61,7 +73,11 @@
       }
       @mixin atLarge {
         width: 20%;
-        margin: 0 auto;
+      }
+      & h1 {
+        @mixin atSmall {
+          margin-top: 20px;
+        }
       }
     }
     &-table {
@@ -80,12 +96,38 @@
         }
       }
     }
+    &-options {
+      @mixin atSmall {
+        max-width: 70%;
+        margin: 15px auto;
+        border: 2px solid $cBorder;
+      }
+      @mixin atMedium {
+        max-width: 50%;
+      }
+      @mixin atMedium {
+        max-width: 30%;
+      }
+      & h4 {
+        @mixin atSmall {
+          grid-column: 1 / span 2;
+        }
+      }
+    }
   }
   &-desc {
     @mixin atSmall {
       margin: 10px auto 0 auto;
       text-align: justify;
       width: 90%;
+    }
+    &-info {
+      @mixin atSmall {
+        grid-column: 1 / span 2;
+        text-align: justify;
+        width: 80%;
+        margin: 0 auto;
+      }
     }
   }
   &-link {
