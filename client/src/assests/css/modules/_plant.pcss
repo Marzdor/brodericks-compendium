@@ -1,7 +1,16 @@
 .plant {
   @mixin atSmall {
     cursor: pointer;
-    margin: 5px;
+  }
+  @mixin atLarge {
+    padding: 5px;
+    margin: 0 0 0 10px;
+    transition: border 0.3s ease;
+  }
+  &:hover {
+    @mixin atLarge {
+      border-bottom: 4px solid $cBorder;
+    }
   }
   &-container {
     @mixin atSmall {
@@ -12,9 +21,10 @@
       margin: 20px;
     }
     @mixin atLarge {
-      grid-template-columns: repeat(3, 1fr);
-      width: 80%;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: left;
       margin: 20px auto;
+      width: 90%;
     }
     &-sub {
       @mixin atSmall {
